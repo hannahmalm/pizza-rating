@@ -17,13 +17,15 @@ class SessionsController < ApplicationController
 
     def create 
         @user = User.find_by(username: params[:user][:username])
-        if @user && @user.authenticate(password: params[:user][:password])
             session[:user_id] = @user.id 
-            #user_path(@user) is the same as user_path(user_id)
             redirect_to user_path(@user)
-        else   
-            redirect_to '/'
-            #redirect_to login_path
-        end 
+        # if @user && @user.authenticate(password: params[:user][:password])
+        #     session[:user_id] = @user.id 
+        #     #user_path(@user) is the same as user_path(user_id)
+        #     redirect_to user_path(@user)
+        # else   
+        #     redirect_to '/'
+        #     #redirect_to login_path
+        # end 
     end 
 end
