@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create' #post the login information to create the session
   get '/signup' => 'users#new'
   #you do not need a post sign up here because the user will be created 
-
   delete '/logout' => 'sessions#destroy' #destroy the session when a user logs out
+ 
 
   resources :ratings
   resources :pizzas

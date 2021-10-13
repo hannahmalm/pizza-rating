@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         #the logout link/button should be within the layouts page
         #in rails use delete instead of destroy - destroy is the preferred command when deleting objects, not sessions
         session.delete(:user_id)
-        redirect to '/'
+        redirect_to '/'
     end 
 
     def new 
