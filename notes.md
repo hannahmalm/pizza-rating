@@ -14,3 +14,11 @@
         delete '/logout' => 'sessions#destroy' #destroy the session when a user logs out
     -  **IT IS THE JOB OF THE USER TO SIGN UP, NOT THE SESSION ****
         get '/signup' => 'users#new'
+5. Add in methods within session controller
+
+6. Add in Views within the session views
+
+
+7. Add in methods within the User controller
+
+8. Add in Views within the user views

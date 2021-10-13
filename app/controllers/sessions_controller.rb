@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     def index 
-        
+        #allows the index page to load
     end 
 
     def destroy 
