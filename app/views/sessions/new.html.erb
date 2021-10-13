@@ -2,15 +2,16 @@
 
 <!--formtag can be used for a login because they are not creating a new user -->
 <!--form_for is used here because -->
+<!--Cannot create a form for @user or User.new, it must be a symbol. A symbol creates the assumption to just send to login screen-->
 
-<%= form_for(@user) do |f| %>
+<%= form_for(:user) do |f| %>
     <%= f.label :username%>
     <%= f.text_field :username%>
 
     <%= f.label :password%>
     <%= f.password_field :password%>
 
-    <%= f.submit "Sign In"%>
+    <%= f.submit "Log In"%>
 
 <% end %>
 
