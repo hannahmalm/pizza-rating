@@ -22,7 +22,8 @@ class SessionsController < ApplicationController
             #user_path(@user) is the same as user_path(user_id)
             redirect_to user_path(@user)
         else   
-            redirect_to login_path
+            redirect_to '/'
+            #redirect_to login_path
         end 
     end 
 end
