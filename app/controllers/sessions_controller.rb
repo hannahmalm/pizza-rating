@@ -1,8 +1,7 @@
 class SessionsController < ApplicationController
     def index 
+        
     end 
-
-  
 
     def destroy 
         #the logout link/button should be within the layouts page
