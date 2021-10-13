@@ -1,4 +1,5 @@
 class User < ApplicationRecord
     has_many :ratings
-    has_many :pizzas, through: :ratings
+    has_many :rated_pizzas, through: :ratings, source: :pizza
+    has_many :pizzas #pizzas that the user creates within the application
 end
