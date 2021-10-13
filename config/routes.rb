@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+#add in session and index routes
+get '/' => 'sessions#index'
+
+
   resources :ratings
   resources :pizzas
   resources :restaurants
