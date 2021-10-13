@@ -13,7 +13,9 @@
   <!--Create the Nav Bar Here-->
   <div>
     <!--When you link for logout, you need to put a method that specifies this is a delete method-->
+    <!--To find these links, type rails routes-->
     <%= link_to "Logout", logout_path, method: :delete %>
+    <%= link_to "Add a Pizza" new_pizza_path %>
   </div>
 
   <body>
