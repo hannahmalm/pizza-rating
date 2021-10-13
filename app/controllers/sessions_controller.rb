@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id #set the session 
             redirect_to user_path(@user) #user_path(@user) is the same as user_path(user_id)
         else   
-            flash[:error] = "Please try again. Username or Password was not correct" #tell the user if login failed
+            flash[:error] = "Please try again. Username or Password was not correct" #tell the user if login failed - Add this into login form view
             redirect_to login_path #redirect the user to the login page
         end 
     end 
