@@ -30,3 +30,9 @@
 7. Add in methods within the User controller
 
 8. Add in Views within the user views
+
+9. Add in new Pizza link into the navbar on the layout application  
+    - To see the correct link_to path that you need, type in rails routes
+    - Add in the path 
+    - Create a "new" method within the pizza controller
+    - Create a "new.html.erb" view within the pizza folder
