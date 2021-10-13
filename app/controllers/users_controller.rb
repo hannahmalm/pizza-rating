@@ -18,4 +18,12 @@ class UsersController < ApplicationController
     
     end 
 
+
+    private 
+
+    #this is where you define user_params 
+    def user_params 
+        params.require(user).permit(username, password)
+    end 
+
 end
