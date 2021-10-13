@@ -1,7 +1,5 @@
 <h1>Make a new pizza</h1>
 
-<p><%= flash[:error]%>
-
 <%= form_for(:pizza) do |f| %>
     <%= f.label :specialtyname %>
     <%= f.text_field :specialtyname %>
@@ -10,10 +8,13 @@
     <%= f.text_field :toppings %>
 
     <p>Select a Resturant:<p>
+    <!--Assign this the resturant id-->
+    <!--Collection_select(object, method, collection, value_method(id), text_method(what is displayed), options-->
+        <%= f.collection_select :resturant_id, Resturant.all, :id, :name%>
 
     <p>Or create a new Resturant<p>
 
-    
+
     <%= f.submit "Add a New Pizza"%>
 
 <% end %>
