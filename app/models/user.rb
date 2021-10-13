@@ -4,6 +4,6 @@ class User < ApplicationRecord
     has_many :pizzas #pizzas that the user creates within the application
     has_secure_password
 
-    validates :username, uniquess: true, presence: true 
+    validates :username, uniqueness: true, presence: true 
 
 end
