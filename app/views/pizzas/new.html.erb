@@ -1,1 +1,19 @@
 <h1>Make a new pizza</h1>
+
+<p><%= flash[:error]%>
+
+<%= form_for(:pizza) do |f| %>
+    <%= f.label :specialtyname %>
+    <%= f.text_field :specialtyname %>
+
+    <%= f.label :toppings %>
+    <%= f.text_field :toppings %>
+
+    <p>Select a Resturant:<p>
+
+    <p>Or create a new Resturant<p>
+
+    
+    <%= f.submit "Add a New Pizza"%>
+
+<% end %>
