@@ -1,8 +1,9 @@
 <h1>Login</h1>
 
-<!--formtag is used for a login because they are not creating a new user -->
+<!--formtag can be used for a login because they are not creating a new user -->
+<!--form_for is used here because -->
 
-<%= form_tag(@user) do |f| %>
+<%= form_for(@user) do |f| %>
     <%= f.label :username%>
     <%= f.text_field :username%>
 
@@ -12,3 +13,4 @@
     <%= f.submit "Sign In"%>
 
 <% end %>
+
