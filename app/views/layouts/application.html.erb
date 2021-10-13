@@ -10,6 +10,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <!--Create the Nav Bar Here-->
+  <div>
+    <!--When you link for logout, you need to put a method that specifies this is a delete method-->
+    <%= link_to "Log Out", logout_path, method: :delete%>
+  </div>
+
   <body>
     <%= yield %>
   </body>
