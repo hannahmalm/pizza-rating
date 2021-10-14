@@ -12,22 +12,21 @@
     <!--Collection_select(object, method, collection, value_method(id), text_method(what is displayed), options-->
         <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
 
-    <p>Or create a new Restaurant<p>
+    <p>Or create a<b> new Restaurant</b><p>
     <!--We need this to write attributes of another object AKA this is my nested form-->
     <!--When doing a nested form, use the fields_for-->
     <div>
         <%=f.fields_for :restaurant do |r|%>
             <%= r.label :name%>
             <%= r.text_field :name %>
-
-             <%= r.label :city%>
+            <br>
+            <%= r.label :city%>
             <%= r.text_field :city %> 
-
-
-             <%= r.label :state%>
+            <br>
+            <%= r.label :state%>
             <%= r.text_field :state %>
-
-             <%= r.label :website %>
+            <br>
+            <%= r.label :website %>
             <%= r.text_field :website %>
         <%end %>
     </div>
