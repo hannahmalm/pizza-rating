@@ -5,6 +5,7 @@ class PizzasController < ApplicationController
 
     def new 
         @pizza = Pizza.new 
+        #tell pizza to build the restaurant because its within a nested form
         @pizza.build_restaurant
     end 
 
