@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   
 
   resources :ratings
-  resources :pizzas 
+  resources :pizzas do 
+    resources :ratings, only: [:new, :index]#nested routes
+  end 
   resources :restaurants
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
