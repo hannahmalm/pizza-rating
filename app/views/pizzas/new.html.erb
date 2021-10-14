@@ -1,6 +1,6 @@
 <h1>Make a new pizza</h1>
 
-<%= form_for(:pizza) do |f| %>
+<%= form_for(@pizza) do |f| %>
     <%= f.label :specialtyname, "Specialty Name:" %>
     <%= f.text_field :specialtyname %>
 
@@ -10,7 +10,7 @@
     <p>Select a Restaurant:<p>
     <!--Assign this the resturant id-->
     <!--Collection_select(object, method, collection, value_method(id), text_method(what is displayed), options-->
-        <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+        <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank: 'Select Restaurant' %>
 
     <p>Or create a<b> new Restaurant</b><p>
     <!--We need this to write attributes of another object AKA this is my nested form-->
