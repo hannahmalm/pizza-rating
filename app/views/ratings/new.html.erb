@@ -2,17 +2,18 @@
 <h1>Rate this Pizza</h1>
 <%= form_for(@rating) do |f|%>
     <br>
-        <%= f.label :title%>
+        <%= f.label :title, "Title:" %>
         <%= f.text_field :title%>
      <br>
-        <%= f.label :rate%>
+        <%= f.label :rate, "Rate:" %>
         <%= f.text_field :rate%>
     <br>
-        <%= f.label :comment%>
+        <%= f.label :comment, "Comment:" %>
         <%= f.text_field :comment%>
     <br>
-        <%= f.label :url%>
+        <%= f.label :url, "Youtube Link:" %>
         <%= f.text_field :url%>
+    <br>
     <br>
         <%= f.hidden_field :pizza_id %>
         <%= f.submit "Submit Rating"%>
