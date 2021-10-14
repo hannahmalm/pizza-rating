@@ -17,15 +17,16 @@ Resources - apidoc.com
     -  **IT IS THE JOB OF THE USER TO SIGN UP, NOT THE SESSION ****
         get '/signup' => 'users#new'
 5. Add in methods within session controller
-    index - 
-    destroy
-    new
+    index - allows the index page to load --> correlates with sessions>index.html.erb
+    destroy - allows a user to log out --> correlates with the layouts>application.html.erb (Logout is within the nav bar)
+    new - nothing within this method, but allows a user to login --> correlations with sessions>new.html.erb (login screen)
     create - correlates to the login
         - Here we try to find the user in the system
-        - Did we find someone and did they put in the correct password?
-
+        - Did we find someone and did they put in the correct password? Authenticate them
+        - If we cannot auhenticate them, give a flash error - **Reflect this flash error within the session new.html.erb** 
 6. Add in Views within the session views
-
+    - sessions>index.html.erb (correlates with session controller index method - shows basic welcome page)
+    -sessions>new.html.erb (correlates with session controller new method - shows login form)
 
 7. Add in methods within the User controller
 
