@@ -53,7 +53,8 @@ Resources - apidoc.com
 11. Add in pizza views
     - pizza > index.html.erb 
         - create a new form_for :pizza 
-            - User form_for instead of form tag
+            - Use form_for instead of form tag
                 - Use form_for when you are creating a form for a model object - CRUD
-        - create a nested form within pizza to create a restaurant
+        - create a nested form within pizza to create a restaurant within the pizza form    
+            - use form_for
     - pizza > new.html.erb 
