@@ -1,7 +1,7 @@
 <h1>Make a new pizza</h1>
 
 <%= form_for(:pizza) do |f| %>
-    <%= f.label :specialtyname %>
+    <%= f.label :specialtyname, "Specialty Name:" %>
     <%= f.text_field :specialtyname %>
 
     <%= f.label :toppings %>

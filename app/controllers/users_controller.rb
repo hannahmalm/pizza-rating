@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     private 
 
-    #this is where you define user_params 
+    #this is where you define user_params - user_params is not an action
     def user_params 
         params.require(:user).permit(:username, :password)
     end 
