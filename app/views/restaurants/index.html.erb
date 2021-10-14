@@ -1,11 +1,8 @@
 <h1>Pizza Places</h1>
 
 <ol>
-    <% @resturants.each do |r|%>
-        <li><%= restaurant.name %></li>
-        <li><%= restaurant.city %></li>
-        <li><%= restaurant.state %></li>
-        <li><%= restaurant.website %></li>
+    <% @restaurants.each do |r|%>
+        <li><%= r.name %> || <%= r.city %> ||  <%= r.state %> || <%= r.website %></li> 
     <%end %>
 
 </ol>
