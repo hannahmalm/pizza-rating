@@ -19,6 +19,16 @@
         <%=f.fields_for :restaurant do |r|%>
             <%= r.label :name%>
             <%= r.text_field :name %>
+
+             <%= r.label :city%>
+            <%= r.text_field :city %> 
+
+
+             <%= r.label :state%>
+            <%= r.text_field :state %>
+
+             <%= r.label :website %>
+            <%= r.text_field :website %>
         <%end %>
     </div>
 
