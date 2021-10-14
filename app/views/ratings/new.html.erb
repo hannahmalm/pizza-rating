@@ -1,16 +1,17 @@
 <%= form_for(@rating) do |f|%>
-     <%= f.label :title%>
-    <%= f.password_field :title%>
+    <%= f.label :title%>
+    <%= f.text_field :title%>
 
-     <%= f.label :rate%>
+    <%= f.label :rate%>
     <%= f.text_field :rate%>
 
     <%= f.label :comment%>
-    <%= f.password_field :comment%>
+    <%= f.text_field :comment%>
 
-     <%= f.label :url%>
-    <%= f.password_field :url%>
+    <%= f.label :url%>
+    <%= f.text_field :url%>
 
+    <%= f.hidden_field :pizza_id %>
     <%= f.submit "Submit Rating"%>
 
 
