@@ -8,11 +8,12 @@ class PizzasController < ApplicationController
     def create 
         @pizza = Pizza.new(pizza_params)
         @pizza.user_id = session[:user_id]
-        if @pizza.save 
-            redirect_to pizza_path(@pizza)
-        else 
-            render :new 
-        end 
+            if @pizza.save 
+                redirect_to pizza_path(@pizza)
+            else 
+                @pizza.build_restaurant
+                render :new
+            end 
     end 
 
     def index 
