@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy' #destroy the session when a user logs out
  
 
+  
+  resources :pizzas 
   resources :ratings
-  resources :pizzas
   resources :restaurants
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

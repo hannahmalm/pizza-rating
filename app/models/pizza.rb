@@ -3,6 +3,7 @@ class Pizza < ApplicationRecord
   belongs_to :restaurant
   has_many :ratings
   has_many :users, through: :ratings #these are the users who have rated the pizza
+  accepts_nested_attributes_for :restaurant 
 
   #the belongs_to resttaurant gives us a reader method for restaurant 
     #def resturant=
