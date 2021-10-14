@@ -4,7 +4,7 @@
     <%= f.label :specialtyname, "Specialty Name:" %>
     <%= f.text_field :specialtyname %>
 
-    <%= f.label :toppings %>
+    <%= f.label :toppings, "Toppings:" %>
     <%= f.text_field :toppings %>
 
     <p>Select a Restaurant:<p>
@@ -17,16 +17,16 @@
     <!--When doing a nested form, use the fields_for-->
     <div>
         <%=f.fields_for :restaurant do |r|%>
-            <%= r.label :name%>
+            <%= r.label :name, "Name:"%>
             <%= r.text_field :name %>
             <br>
-            <%= r.label :city%>
+            <%= r.label :city, "City:"%>
             <%= r.text_field :city %> 
             <br>
-            <%= r.label :state%>
+            <%= r.label :state, "State:"%>
             <%= r.text_field :state %>
             <br>
-            <%= r.label :website %>
+            <%= r.label :website, "Website"%>
             <%= r.text_field :website %>
         <%end %>
     </div>
