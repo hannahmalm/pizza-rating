@@ -1,5 +1,8 @@
 class PizzasController < ApplicationController
 
+    def index 
+    end 
+
     def new 
         @pizza = Pizza.new 
         @pizza.build_restaurant
@@ -16,11 +19,10 @@ class PizzasController < ApplicationController
             end 
     end 
 
-    def index 
-    end 
+   
 
     def show 
-
+        @pizza = Pizza.find_by_id(params[:id])
     end 
 
 
