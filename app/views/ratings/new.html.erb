@@ -1,11 +1,12 @@
-<h1>Add a Rating for <%=@rating.pizza.restaurant.name%>'s famous <%= @rating.pizza.specialtyname%> specialty! </h1>
+
 <%= form_for(@rating) do |f|%>
     <br>
     <% if params[:pizza_id] %>
-        <%= fi.hidden_field :pizza_id %>
+        <%= f.hidden_field :pizza_id %>
     <% else %>
         <%= f.label :pizza_id, "Select a Pizza" %>
-        <%= f.collection_select :pizza_id, Pizza.all, :id, :specialtyname, include_blank: true %>
+        <%= f.collection_select :pizza_id, Pizza.all, :id, :specialtyname, include_blank: 'Select Pizza' %>
+    <% end %>
         <%= f.label :title, "Title:" %>
         <%= f.text_field :title%>
      <br>
