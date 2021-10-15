@@ -5,7 +5,7 @@
         <%= f.hidden_field :pizza_id %>
     <% else %>
         <%= f.label :pizza_id, "Select a Pizza" %>
-        <%= f.collection_select :pizza_id, Pizza.all, :id, :specialtyname_and_restaurant, include_blank: 'Select Pizza' %>
+        <%= f.collection_select :pizza_id, Pizza.all.alpha, :id, :specialtyname_and_restaurant, include_blank: 'Select Pizza' %>
     <% end %>
         <%= f.label :title, "Title:" %>
         <%= f.text_field :title%>
