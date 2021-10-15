@@ -19,9 +19,7 @@ class RatingsController < ApplicationController
     end 
 
     def show 
-        #rating can only belong to ONE pizza 
-        #rating belongs_to pizza 
-        #@rating.pizza 
+        @rating = Rating.find_by_id(params[:id])
     end 
 
     def index 
