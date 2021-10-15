@@ -1,5 +1,5 @@
 <h1>Sign up</h1>
-<%= render 'layouts/errors', locals: {object: @user} %>
+<%= render partial: 'layouts/errors', locals: {object: @user} %>
 
 <!--You want a formfor for signup -->
 <%= form_for(@user) do |f| %>
