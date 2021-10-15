@@ -16,6 +16,8 @@ class Pizza < ApplicationRecord
     end 
   end 
 
+  #validates :specialtyname: uniqueness: {scope: :restaurant, message: 'This pizza is already created.' }
+
 
   #--- add in the restaurant attributes - create a restaurant if the name is not empty
   def restaurant_attributes(attributes)
