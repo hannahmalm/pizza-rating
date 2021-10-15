@@ -10,7 +10,9 @@ class RatingsController < ApplicationController
     end 
 
     def create 
+        #you need to add in the user and pizza - a rating belongs to a User and Pizza
         @rating = Rating.create(rating_params)
+        @rating 
         if @rating.save #checks to see if there is a pizza id
             redirect_to rate_path(@rate) #this is the same as saying /rating/:id
         else 
