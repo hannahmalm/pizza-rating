@@ -5,6 +5,9 @@ class Pizza < ApplicationRecord
   has_many :users, through: :ratings #these are the users who have rated the pizza
   accepts_nested_attributes_for :restaurant #necessary if using a nested form 
 
+  validates :specialtyname, presence: true
+  validates :toppings, presence: true
+
   #--- add in the restaurant attributes - create a restaurant if the name is not empty
   def restaurant_attributes(attributes)
     restaurant = Restaurant.find_or_create_by(attributes) if 

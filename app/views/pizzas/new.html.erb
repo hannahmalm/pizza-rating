@@ -1,5 +1,5 @@
 <h1>Make a new pizza</h1>
-
+<%= render 'layouts/errors', locals: {object: @pizza} %>
 <%= form_for(@pizza) do |f| %>
     <%= f.label :specialtyname, "Specialty Name:" %>
     <%= f.text_field :specialtyname %>

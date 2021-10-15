@@ -65,4 +65,5 @@ Run 'rails routes' to see the routes provided
 14. Add appropriate error messages
     - Add a partial to the layouts view for create error views 
     - Added in a standard error boiler plate that is saying the number of errors and what the error was.
-    
+    - render the error partial in the views 
+        <%= render '/layout/errors, locals: {zone: @zone}>'
