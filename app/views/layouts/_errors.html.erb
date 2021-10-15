@@ -1,11 +1,13 @@
-<% if @rating.erros.any? %>
+<% if object.erros.any? %>
     <div id="error_explanation">
-    <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this review from being saved: </h2>
+    <h2><%= pluralize(object.errors.count, "error") %> prohibited this from being saved: </h2>
 
     <ul>
-    <% @rating.errors.full_messages.each do |msg| %>
+    <% object.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
     </ul>
     </div>
 <% end %>
+
+<!--This is standard error boiler plate. Object will refer to the object we are rendering, @user, @review, @pizza, etc.-->
