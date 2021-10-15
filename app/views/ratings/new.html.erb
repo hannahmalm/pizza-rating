@@ -1,12 +1,12 @@
 
-<h1>Rate this Pizza</h1>
+<h1>Add a Rating for <%=@rating.pizza.restaurant.name%>'s famous <%= @rating.pizza.specialtyname%> specialty! </h1>
 <%= form_for(@rating) do |f|%>
     <br>
         <%= f.label :title, "Title:" %>
         <%= f.text_field :title%>
      <br>
         <%= f.label :rate, "Rate:" %>
-        <%= f.number_field :rate, :step => 0.01, min:0, max:10.0%>
+        <%= f.number_field :rate, :step => 0.01, min:0, max:10.0%> <!--step allows you to add a decimal using number field-->
     <br>
         <%= f.label :comment, "Comment:" %>
         <%= f.text_field :comment%>
