@@ -59,3 +59,8 @@ Run 'rails routes' to see the routes provided
         - create a nested form within pizza to create a restaurant within the pizza form    
             - use form_for
     - pizza > new.html.erb 
+12. Add in Restaurnat Controllers/Views
+13. Add in Ratings Controllers/Views
+    - The rating will be within the nested form
+14. Add appropriate error messages
+    - Add a partial to the layouts view for create error views 
