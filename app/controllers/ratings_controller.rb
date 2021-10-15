@@ -9,6 +9,16 @@ class RatingsController < ApplicationController
         end 
     end 
 
+    def create 
+        Rating.create(rating_params)
+        redirect_to rate_path(@rate) #this is the same as saying /rating/:id
+    end 
+
+    def show 
+        #rating can only belong to ONE pizza 
+        #rating belongs_to pizza 
+        #@rating.pizza 
+    end 
 
     def index 
 
