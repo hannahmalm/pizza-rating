@@ -8,6 +8,13 @@ class Pizza < ApplicationRecord
   validates :specialtyname, presence: true
   validates :toppings, presence: true
 
+  #scopes 
+  #order specialty name alphabetically 
+  #test scope methods in console rails c
+  def self.alpha 
+    order(:specialtyname)
+  end 
+
   def not_a_duplicate #custom validation
     #query the db - if a pizza is already created with the same specialtyname and restaurant, thow an error
     #check this in rails c - Pizza.find_by(specialtryname: 'Mellow Mushroom', restaurant_id: 1)
