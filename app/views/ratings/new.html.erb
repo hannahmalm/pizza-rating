@@ -1,7 +1,3 @@
-<!--Render the error partial-->
-<%= render partial: 'layouts/errors', locals: {object: @rating} %>
-
-
 <h1>Add a Rating for <%=@rating.pizza.restaurant.name%>'s famous <%= @rating.pizza.specialtyname%> specialty! </h1>
 <%= form_for(@rating) do |f|%>
     <br>
@@ -21,3 +17,5 @@
         <%= f.hidden_field :pizza_id %>
         <%= f.submit "Submit Rating"%>
 <%end%>
+<!--Render the error partial-->
+<%= render partial: 'layouts/errors', locals: {object: @rating} %>
