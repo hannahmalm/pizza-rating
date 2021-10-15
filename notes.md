@@ -67,3 +67,4 @@ Run 'rails routes' to see the routes provided
     - Added in a standard error boiler plate that is saying the number of errors and what the error was.
     - render the error partial in the views 
         <%= render '/layout/errors, locals: {zone: @zone}>'
+    - Remember that validations happen when something is saved using .save
