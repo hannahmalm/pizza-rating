@@ -11,10 +11,9 @@ class RatingsController < ApplicationController
 
     def create 
         #you need to add in the user and pizza - a rating belongs to a User and Pizza
-        @rating = Rating.create(rating_params)
-        @rating 
+        @rating = current_user.ratings.build(rating_params)
         if @rating.save #checks to see if there is a pizza id
-            redirect_to rate_path(@rate) #this is the same as saying /rating/:id
+            redirect_to rating_path(@rating) #this is the same as saying /rating/:id
         else 
             render :new 
         end 
