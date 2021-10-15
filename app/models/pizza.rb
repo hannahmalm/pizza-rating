@@ -8,15 +8,16 @@ class Pizza < ApplicationRecord
   validates :specialtyname, presence: true
   validates :toppings, presence: true
 
-  validates not_a_duplicate #custom validation
+  def not_a_duplicate #custom validation
     #query the db - if a pizza is already created with the same specialtyname and restaurant, thow an error
     #check this in rails c - Pizza.find_by(specialtryname: 'Mellow Mushroom', restaurant_id: 1)
     if Pizza.find_by(specialtyname: specialtyname, restaurant_id: restaurant_id)
         errors.add(:specialtyname, "This pizza is already created. Please add a new pizza.")
     end 
   end 
+  
 
-  #validates :specialtyname: uniqueness: {scope: :restaurant, message: 'This pizza is already created.' }
+  #validates :specialtyname, uniqueness: {scope: :restaurant, message: 'This pizza is already created.' }
 
 
   #--- add in the restaurant attributes - create a restaurant if the name is not empty
