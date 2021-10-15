@@ -15,6 +15,10 @@ class Pizza < ApplicationRecord
         errors.add(:specialtyname, "This pizza is already created. Please add a new pizza.")
     end 
   end 
+
+  def specialtyname_and_restaurant #this method is used to list multiple things within the collection select
+    "#{specialtyname} - #{restaurant.name}"
+  end 
   
 
   #validates :specialtyname, uniqueness: {scope: :restaurant, message: 'This pizza is already created.' }
