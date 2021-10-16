@@ -3,10 +3,16 @@
 <%= form_for(@pizza) do |f| %>
     <%= f.label :specialtyname, "Specialty Name:" %>
     <%= f.text_field :specialtyname %>
-
+   <br>
+    <br>
     <%= f.label :toppings, "Toppings:" %>
     <%= f.text_field :toppings %>
-
+   <br>
+   <br>
+    <%= f.label :image, "Image:" %>
+    <%= f.file_field :image %>
+   <br>
+   <br>
     <p>Select a Restaurant:<p>
     <!--Assign this the resturant id-->
     <!--Collection_select(object, method, collection, value_method(id), text_method(what is displayed), options-->

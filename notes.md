@@ -103,5 +103,14 @@ Run 'rails routes' to see the routes provided
     - rails active_storage:install - creates a new migration which allows to store pics 
     - run rake db:migrate
     - tell app where to store information 
+    - activestorage is the way to add in photos and images - newer piece of rails 
+    - Add images to Pizza class using 'has_one_attatched :image'
+    - add in label within pizza new form to give user a place to put image 
+    - add in a new param within the pizza controller - add :image into params for pizza 
+    - add in an image tag within show.html.erb for pizza - add an if statement to see if an image is attatched 
+    - IF YOU WANT TO DO THIS IN AMAZON:
+        - Set up AWS account - S3 Storage - Create a Bucket
+        - change config/production.rb to config.active_storage.service = :amazon
+        - in storage.yml, uncomment out the amazon file service information 
 
     

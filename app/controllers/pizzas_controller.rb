@@ -14,6 +14,8 @@ class PizzasController < ApplicationController
         @pizza = Pizza.new(pizza_params)
         @pizza.user_id = session[:user_id]
             if @pizza.save 
+                @pizza.image.purge 
+                @pizza.image.attatch(params[:pizza][:image])
                 redirect_to pizza_path(@pizza), :notice => "Your Pizza Was Saved"
             else 
                 @pizza.build_restaurant

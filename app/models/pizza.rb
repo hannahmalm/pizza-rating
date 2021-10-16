@@ -5,6 +5,9 @@ class Pizza < ApplicationRecord
   has_many :users, through: :ratings #these are the users who have rated the pizza
   accepts_nested_attributes_for :restaurant #necessary if using a nested form 
 
+  has_one_attached :image #this tells rails to look at active storage and see the attatchement 
+  #has_many_attatched :images #use this only if adding on multiple images 
+
   validates :specialtyname, presence: true
   validates :toppings, presence: true
 
