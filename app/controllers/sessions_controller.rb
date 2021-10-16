@@ -15,16 +15,27 @@ class SessionsController < ApplicationController
     end 
 
     def create 
-        @user = User.find_by(username: params[:user][:username])
+
+        if params[:provider] == 'google_oauth2'
+            @user = User.find_or_create_by_google(auth) #this method is in user model
+            session[:user_id] = @user.id 
+            redirect_to user_path(@user)
+        elsif params[:provider] == 'github'
+            @user = User.find_or_create_by_github(auth) #this method is in user model
+            session[:user_id] = @user.id 
+            redirect_to user_path(@user)
+        else 
+            @user = User.find_by(username: params[:user][:username])
             #try is an active support method, calling try on the user, if the user is not nil, then they are authenticating the params password against what the user put in
             #before calling the method, it trys to see if the user is nil. If user is not nil, it will authenticate
-        if @user.try(:authenticate, params[:user][:password])
-        # if @user && @user.authenticate(password: params[:user][:password])
-            session[:user_id] = @user.id #set the session 
-            redirect_to user_path(@user) #user_path(@user) is the same as user_path(user_id)
-        else   
-            flash[:error] = "Please try again. Username or Password was not correct" #tell the user if login failed - Add this into login form view
-            redirect_to login_path #redirect the user to the login page
+            if @user.try(:authenticate, params[:user][:password])
+            # if @user && @user.authenticate(password: params[:user][:password])
+                session[:user_id] = @user.id #set the session 
+                redirect_to user_path(@user) #user_path(@user) is the same as user_path(user_id)
+            else   
+                flash[:error] = "Please try again. Username or Password was not correct" #tell the user if login failed - Add this into login form view
+                redirect_to login_path #redirect the user to the login page
+            end 
         end 
     end 
 
