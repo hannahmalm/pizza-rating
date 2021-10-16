@@ -86,4 +86,8 @@ Run 'rails routes' to see the routes provided
         - get '/auth/google_oauth2/callback' => 'sessions#omniauth'
         - add in an omniauth method in sessions controller 
         - https://stackoverflow.com/questions/11485271/google-oauth-2-authorization-error-redirect-uri-mismatch
-    
+    - add in omniauth method within the sessions controller
+        - this method links to a method in the User model called User.find_or_create_by_google(auth)
+            - This method is used to find or create a user based on the email that is brought back in the google authentication 
+            - there is also a private method created for auth on the sessions controller - this will be used to return the request .env 
+    - Trying Omniauth with GitHub
