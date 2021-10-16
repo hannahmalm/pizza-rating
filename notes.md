@@ -95,5 +95,7 @@ Run 'rails routes' to see the routes provided
         - register a new OAuth Application
         - Homepage url: http://127.0.0.1:3000/
         - Authorization Callback URL: http://127.0.0.1:3000/auth/github/callback
+        - add in omniauth-github gem and bundle install
+        - add in link within index page to sign in via github
 
     

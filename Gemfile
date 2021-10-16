@@ -26,6 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 #this will change depending on provider
 gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
 #allows access to dotenv to store secret information
 gem 'dotenv-rails'
 
