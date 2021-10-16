@@ -81,4 +81,4 @@ Run 'rails routes' to see the routes provided
         - Click credentials then click, create credentials, then click OAuth client id
         - add the url under authorized urls: http://localhost:3000/auth/google_oauth2/callback
         - click save and the credentials will appear 
-    - 
+    - add in link within the index page to give the option of signing in with google 
