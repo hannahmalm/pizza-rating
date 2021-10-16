@@ -29,10 +29,18 @@ class SessionsController < ApplicationController
     end 
 
     def omniauth 
-        byebug
-        User.find_or_create_by(email: auth[:info][:email])
+        #find or create the user via the email, then set the password 
+        @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
+            u.password = SecureRandom.hex #set a random password when using omniauth and SecureRandom.hex
+        end 
+
+        #After password is set, they log in, session is set, they are redirected to user path 
+        session[:user_id] = @user.id
+        redirect_to user_path(@user) #same as /user/:id 
+
+
         #run Rails c - request.env['omniauth.auth'][':info'][':email']
-        #User.where(email: auth[:info][:email]).first_or_initialize #looks in db for email, if email exists(first result), authorize it, if not initialize it
+        #User.where(username: auth[:info][:email]).first_or_initialize #looks in db for email, if email exists(first result), authorize it, if not initialize it
  
     end 
 
