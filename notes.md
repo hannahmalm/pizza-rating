@@ -97,5 +97,6 @@ Run 'rails routes' to see the routes provided
         - Authorization Callback URL: http://127.0.0.1:3000/auth/github/callback
         - add in omniauth-github gem and bundle install
         - add in link within index page to sign in via github
+        - The omniauth.auth key in the environment hash provides an Authentication Hash which will contain information about the just authenticated user including a unique id, the strategy they just used for authentication, and personal details such as name and email address as available. 
 
     
