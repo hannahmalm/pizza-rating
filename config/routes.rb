@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :ratings
   resources :pizzas do 
-    resources :ratings, only: [:new, :index]#nested routes
+  resources :ratings, only: [:new, :index]#nested routes
   end 
   resources :restaurants
   resources :users
