@@ -112,5 +112,13 @@ Run 'rails routes' to see the routes provided
         - Set up AWS account - S3 Storage - Create a Bucket
         - change config/production.rb to config.active_storage.service = :amazon
         - in storage.yml, uncomment out the amazon file service information 
+        - ensure region matches the region in your bucket 
+        - ensure the bucket name matches your bucket 
+        - change access_key_id credentials - this only works with Rails5, credentials file is encrypted - you can push to github but noone can see it. 
+        - add in gem 'aws-sdk-s3', require: false 
+        - bundle install 
+        - master.key is the encyrption key to unmask the file - master key cannot get pushed to github
+        - add in access key and secret access key in the credentials.yml
+        - in amazon, it will only show you credentials once 
 
     
