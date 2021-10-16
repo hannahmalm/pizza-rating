@@ -82,3 +82,7 @@ Run 'rails routes' to see the routes provided
         - add the url under authorized urls: http://localhost:3000/auth/google_oauth2/callback
         - click save and the credentials will appear 
     - add in link within the index page to give the option of signing in with google 
+    - add in a route in routes file - receive request then send to sessions cotroller 
+        - get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+        - add in an omniauth method in sessions controller 
+        - 

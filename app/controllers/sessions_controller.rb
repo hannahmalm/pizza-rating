@@ -27,4 +27,8 @@ class SessionsController < ApplicationController
             redirect_to login_path #redirect the user to the login page
         end 
     end 
+
+    def omniauth 
+    
+    end 
 end
