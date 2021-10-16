@@ -101,5 +101,7 @@ Run 'rails routes' to see the routes provided
 16. Adding in Photos
     - Run commands in terminal
     - rails active_storage:install - creates a new migration which allows to store pics 
+    - run rake db:migrate
+    - tell app where to store information 
 
     
