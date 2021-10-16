@@ -98,5 +98,8 @@ Run 'rails routes' to see the routes provided
         - add in omniauth-github gem and bundle install
         - add in link within index page to sign in via github
         - The omniauth.auth key in the environment hash provides an Authentication Hash which will contain information about the just authenticated user including a unique id, the strategy they just used for authentication, and personal details such as name and email address as available. 
+16. Adding in Photos
+    - Run commands in terminal
+    - rails active_storage:install - creates a new migration which allows to store pics 
 
     
