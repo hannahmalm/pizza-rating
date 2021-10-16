@@ -91,3 +91,9 @@ Run 'rails routes' to see the routes provided
             - This method is used to find or create a user based on the email that is brought back in the google authentication 
             - there is also a private method created for auth on the sessions controller - this will be used to return the request .env 
     - Trying Omniauth with GitHub
+        - https://github.com/settings/applications/new
+        - register a new OAuth Application
+        - Homepage url: http://127.0.0.1:3000/
+        - Authorization Callback URL: http://127.0.0.1:3000/auth/github/callback
+
+    
