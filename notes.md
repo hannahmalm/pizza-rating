@@ -98,6 +98,12 @@ Run 'rails routes' to see the routes provided
         - add in omniauth-github gem and bundle install
         - add in link within index page to sign in via github
         - The omniauth.auth key in the environment hash provides an Authentication Hash which will contain information about the just authenticated user including a unique id, the strategy they just used for authentication, and personal details such as name and email address as available. 
+        * Behind the scense with Omniauth 
+            1. Goes to root route or index route (wherever is logging in from)
+            2. Follows /auth/:provider/callback route (callback just tells the server where to go after authenticating)
+            3. User is logged in via the SESSION. Remember that is the job of the session to log someone in.
+            4. After logged in, it takes user back to root route
+            5. erb file is rendered 
 16. Adding in Photos
     - Run commands in terminal
     - rails active_storage:install - creates a new migration which allows to store pics 
