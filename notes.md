@@ -68,3 +68,9 @@ Run 'rails routes' to see the routes provided
     - render the error partial in the views 
         <%= render '/layout/errors, locals: {zone: @zone}>'
     - Remember that validations happen when something is saved using .save
+    - https://guides.rubyonrails.org/active_record_validations.html#performing-custom-validations
+15. Omniauth
+    - add in omniauth gem
+    - add in omniauth provider gem
+    - add in dotenv gem to see secret information
+    - add a new file under initilaizers - add omniauth.rb - this code will be different based on provider
