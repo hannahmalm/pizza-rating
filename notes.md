@@ -74,3 +74,11 @@ Run 'rails routes' to see the routes provided
     - add in omniauth provider gem
     - add in dotenv gem to see secret information
     - add a new file under initilaizers - add omniauth.rb - this code will be different based on provider
+    - add in .env file - you will need the id and secret keys 
+        - https://console.cloud.google.com/projectselector2/apis/dashboard?pli=1&supportedpurview=project
+        - create a new project
+        - once in the project, add the credentials
+        - Click credentials then click, create credentials, then click OAuth client id
+        - add the url under authorized urls: http://localhost:3000/auth/google_oauth2/callback
+        - click save and the credentials will appear 
+    - 
