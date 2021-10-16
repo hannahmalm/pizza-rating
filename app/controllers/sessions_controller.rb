@@ -17,11 +17,11 @@ class SessionsController < ApplicationController
     def create 
 
         if params[:provider] == 'google_oauth2'
-            @user = User.find_or_create_by_google(auth) #this method is in user model
+            @user = User.find_or_create_by_google(auth_hash) #this method is in user model
             session[:user_id] = @user.id 
             redirect_to user_path(@user)
         elsif params[:provider] == 'github'
-            @user = User.find_or_create_by_github(auth) #this method is in user model
+            @user = User.find_or_create_by_github(auth_hash) #this method is in user model
             session[:user_id] = @user.id 
             redirect_to user_path(@user)
         else 
@@ -41,8 +41,8 @@ class SessionsController < ApplicationController
 
     def omniauth 
         #find or create the user via the email, then set the password 
-        @user = User.find_or_create_by_google(auth)
-
+        @user = User.find_or_create_by_google(auth_hash)
+        @user = User.find_or_create_by_github(auth_hash)
         #After password is set, they log in, session is set, they are redirected to user path 
         session[:user_id] = @user.id
         redirect_to user_path(@user) #same as /user/:id 
@@ -55,7 +55,7 @@ class SessionsController < ApplicationController
 
     private 
 
-        def auth #will return the request .env
+        def auth_hash #will return the request .env
             request.env['omniauth.auth']
         end 
 
