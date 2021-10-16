@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   #you do not need a post sign up here because the user will be created 
   delete '/logout' => 'sessions#destroy' #destroy the session when a user logs out
 
-  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+  #get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+  get '/auth/:provider/callback' => 'sessions#create'
  
 
   
