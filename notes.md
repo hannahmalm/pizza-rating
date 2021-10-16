@@ -85,4 +85,5 @@ Run 'rails routes' to see the routes provided
     - add in a route in routes file - receive request then send to sessions cotroller 
         - get '/auth/google_oauth2/callback' => 'sessions#omniauth'
         - add in an omniauth method in sessions controller 
-        - 
+        - https://stackoverflow.com/questions/11485271/google-oauth-2-authorization-error-redirect-uri-mismatch
+        
