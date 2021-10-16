@@ -30,9 +30,7 @@ class SessionsController < ApplicationController
 
     def omniauth 
         #find or create the user via the email, then set the password 
-        @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
-            u.password = SecureRandom.hex #set a random password when using omniauth and SecureRandom.hex
-        end 
+        @user = User.find_or_create_by_google(auth)
 
         #After password is set, they log in, session is set, they are redirected to user path 
         session[:user_id] = @user.id
