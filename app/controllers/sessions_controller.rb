@@ -29,6 +29,17 @@ class SessionsController < ApplicationController
     end 
 
     def omniauth 
-    byebug
+        byebug
+        User.find_or_create_by(email: auth[:info][:email])
+        #run Rails c - request.env['omniauth.auth'][':info'][':email']
+        #User.where(email: auth[:info][:email]).first_or_initialize #looks in db for email, if email exists(first result), authorize it, if not initialize it
+ 
     end 
+
+    private 
+
+        def auth #will return the request .env
+            request.env['omniauth.auth']
+        end 
+
 end
