@@ -36,6 +36,22 @@
 
     <br>
 
+
+    <br> <p>Rate This Pizza</b><p> <%=f.fields_for :rating do |f|%>
+        <%= f.label :title, "Title:" %>
+        <%= f.text_field :title%>
+     <br>
+        <%= f.label :rate, "Rate:" %>
+        <%= f.number_field :rate, :step => 0.01, min:0, max:10.0%> <!--step allows you to add a decimal using number field-->
+    <br>
+        <%= f.label :comment, "Comment:" %>
+        <%= f.text_area :comment%>
+    <br>
+        <%= f.label :url, "Youtube Link:" %>
+        <%= f.text_field :url%>
+    <br>
+    <%end%>
+    <br>
     <%= f.submit "Add a New Pizza"%>
 
 <% end %>
