@@ -7,23 +7,23 @@ table, th, td {
   border-spacing: 10px;
 }
 </style>
-<table class="foobar" cellpadding="10" cellspacing="0">
+<table class="foobar" cellpadding="10">
  <tr>
-    <th>View Details</th>
     <th>Rating</th>
     <th>Specialty Name</th>
     <th>Restaurant</th>
     <th>City</th>
     <th>State</th>
+    <th>Youtube URL</th>
   </tr>
   <tr>
-    <% @ratings.each do |r| %>
-    <td> <%= link_to ratings_path%> </td> 
-   <td> <%= r.rate %> </td> 
-   <td> <%= r.pizza.specialtyname%>    
-   <td> <%= r.pizza.restaurant.name%>  
-   <td> <%= r.pizza.restaurant.city%>  
-   <td> <%= r.pizza.restaurant.state%>  
+    <% @ratings.each do |rating| %>
+   <td> <%= rating.rate %> 
+   <td> <%= rating.pizza.specialtyname%>    
+   <td> <%= rating.pizza.restaurant.name%>  
+   <td> <%= rating.pizza.restaurant.city%>  
+   <td> <%= rating.pizza.restaurant.state%>  
+   <td> <%= rating.url%> 
 </tr>
 <%end %>
 </table>
