@@ -1,7 +1,8 @@
 class PizzasController < ApplicationController
 
     def index 
-        @pizzas = Pizza.all.order_by_rating
+        #@pizzas = Pizza.all.order_by_rating
+        @pizzas = Pizza.all
     end 
 
     def new 

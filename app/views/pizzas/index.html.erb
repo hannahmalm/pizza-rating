@@ -3,8 +3,7 @@
 
 <ol>
     <% @pizzas.each do |p| %>
-        <li><%= p.specialtyname%> || <%= p.toppings %> </li>
+        <li><b>Restaurant:</b> <%= p.restaurant.name %> | <b>Specialty Name:</b> <%= p.specialtyname %> </li>
         <%= link_to "Rate this Pizza", new_pizza_rating_path(p.id)%> <!--pass in the pizza_id (p.id) in this nested route-->
     <%end %>
-
 </ol>
