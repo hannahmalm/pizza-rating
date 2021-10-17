@@ -19,6 +19,16 @@ class UsersController < ApplicationController
         @user = User.find_by_id(params[:id])
     end 
 
+    def index 
+        @user = User.find_by_id(params[:id])
+    end     
+
+    def current_user #this method needs to return user that is found by session user id
+        #||= will only call db once if you are using current user more than once in a method 
+        #find by id so that if the id is null it wont error out
+        @current_user ||= User.find_by_id(session[:user_id])
+    end 
+
     private 
 
     #this is where you define user_params - user_params is not an action
