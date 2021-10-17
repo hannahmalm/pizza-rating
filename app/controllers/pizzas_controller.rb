@@ -22,12 +22,20 @@ class PizzasController < ApplicationController
             end 
     end 
 
-   
-
     def show 
         @pizza = Pizza.find_by_id(params[:id])
     end 
 
+    def edit 
+       
+    end 
+
+    def update(pizza_params)
+        @pizza = Pizza.find_by_id(params[:id])
+        @pizza.update(specialtyname: params[:specialtyname])
+        @pizza.update(toppings: params[:toppings])
+        redirect_to pizza_path(@pizza)
+    end 
 
     private 
 
