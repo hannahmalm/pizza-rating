@@ -22,7 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 #add bootstrap
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+#gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'bootstrap', '~> 5.1.0'
+gem 'jquery-rails'
 
 #Omniauth Gems
 gem 'omniauth'
