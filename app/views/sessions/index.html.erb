@@ -1,11 +1,8 @@
 <%= render :partial => 'layouts/loginheader' %>
 <div class="index">
-<h1>Welcome </h1>
+<h1><b>Welcome </b></h1>
 <p>
-    <%= link_to "Login", login_path %>
-    OR 
-    <%= link_to "Signup", signup_path %>
-    OR 
+    <%= link_to "Login", login_path %> or <%= link_to "Signup", signup_path %> or 
     <%= link_to "Sign in with Google", "/auth/google_oauth2"%> <!--This is a custom path, not a path helper-->
 </p>
 </div>
