@@ -1,9 +1,25 @@
  <%= render :partial => 'layouts/header' %>
 <h1>Pizza Places</h1>
 
-<ol>
-    <% @restaurants.each do |r|%>
-        <li><%= r.name %> || <%= r.city %> ||  <%= r.state %> || <%= r.website %></li> 
-    <%end %>
-
-</ol>
+<style>
+table, th, td {
+  border: 3px solid black;
+  border-spacing: 10px;
+}
+</style>
+<table class="foobar" cellpadding="10">
+ <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Website</th>
+  </tr>
+  <tr>
+    <% @restaurants.each do |r| %>
+   <td> <%= r.name %>
+   <td> <%= r.city %>    
+   <td> <%= r.state %> 
+   <td> <%= r.website %>
+</tr>
+<%end %>
+</table>

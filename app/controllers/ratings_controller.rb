@@ -36,7 +36,6 @@ class RatingsController < ApplicationController
     end 
 
     private 
-
     #because we are doing a hidden field, you need to specify this 
         def rating_params 
             params.require(:rating).permit(:pizza_id, :title, :rate, :comment, :url)
