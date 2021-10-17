@@ -1,0 +1,11 @@
+<h1>Update a Pizza</h1>
+
+<%= form_for(@object) do |f| %>
+    <%= f.label :specialtyname, "Specialty Name:" %>
+    <%= f.text_field :specialtyname %>
+   <br>
+    <br>
+    <%= f.label :toppings, "Toppings:" %>
+    <%= f.text_field :toppings %>
+   <br>
+<%= f.submit "Add a New Pizza"%>
