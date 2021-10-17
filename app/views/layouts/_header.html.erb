@@ -1,11 +1,23 @@
-<nav class="navbar navbar-light" style="background-color: #A52A2A;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">On a Mission for the Best Pizza in the USA.</a>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="nav navbar-nav navbar-right">
-        <li> <%= link_to "Logout", logout_path, method: :delete %> </li>
-        <li>  <a> <%= link_to "Add a Pizza", new_pizza_path %> </li>
-        <li>  <a> <%= link_to "Add a Restaurant", new_restaurant_path %> </li>
+    <a class="navbar-brand" href="#">On a Mission to find the best pizza in the USA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-link active">
+            <li> <%= link_to "Logout", logout_path, method: :delete %> </li>
+        </li>
+         <li class="nav-link active">
+           <li> <%= link_to "Add a Pizza", new_pizza_path %> </li>
+        </li>
+         <li class="nav-link active">
+         <li> <%= link_to "Add a Restaurant", new_restaurant_path %> </li>
+        </li>
       </ul>
     </div>
   </div>
