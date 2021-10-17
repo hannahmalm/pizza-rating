@@ -1,7 +1,7 @@
  <%= render :partial => 'layouts/header' %>
 <h1>Welcome, <%=@user.username%></h1>
 
-<% @user.rated_pizzas.each do |p|%>
+<% @user.pizzas.each do |p|%>
 <li> <%= link_to p.specialtyname_and_restaurant, pizza_path(p) %> </li>
 <% end %>
 

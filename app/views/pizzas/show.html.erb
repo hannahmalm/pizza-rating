@@ -7,12 +7,13 @@ table, th, td {
 </style>
 <table class="foobar" cellpadding="10">
   <tr>
+    <th>Restaurant</th>
     <th>Specialty Name</th>
     <th>Toppings</th>
-    <th>Image</th>
     <th>Rating</th>
   </tr>
   <tr>
+   <td><%=@pizza.restaurant.name%></td>
     <td><%=@pizza.specialtyname%></td>
     <td><%=@pizza.toppings%></td>  
   </tr>
