@@ -15,14 +15,11 @@
 
   <!--Create the Nav Bar Here-->
   <%= render 'layouts/header' %>
-   <ul class="nav navbar-nav"><a href="/">HOME</a></li>
-    
       <!--When you link for logout, you need to put a method that specifies this is a delete method-->
       <!--To find these links, type rails routes-->
-      <%= link_to "Logout", logout_path, method: :delete %> <!--sessions#destroy-->
+      <%= link_to "Logout", logout_path, method: :delete %>
       <%= link_to "Add a Pizza", new_pizza_path %> <!--pizzas#new-->
       <%= link_to "Add a Restaurant", new_restaurant_path %> <!--restaurants#new-->
-  </ul>
 
   <body>
 
