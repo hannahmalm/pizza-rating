@@ -20,10 +20,6 @@ class SessionsController < ApplicationController
             @user = User.find_or_create_by_google(auth_hash) #this method is in user model
             session[:user_id] = @user.id 
             redirect_to user_path(@user)
-        elsif params[:provider] == 'github'
-            @user = User.find_or_create_by_github(auth_hash) #this method is in user model
-            session[:user_id] = @user.id 
-            redirect_to user_path(@user)
         else 
             @user = User.find_by(username: params[:user][:username])
             #try is an active support method, calling try on the user, if the user is not nil, then they are authenticating the params password against what the user put in
@@ -42,7 +38,6 @@ class SessionsController < ApplicationController
     def omniauth 
         #find or create the user via the email, then set the password 
         @user = User.find_or_create_by_google(auth_hash)
-        @user = User.find_or_create_by_github(auth_hash)
         #After password is set, they log in, session is set, they are redirected to user path 
         session[:user_id] = @user.id
         redirect_to user_path(@user) #same as /user/:id 
