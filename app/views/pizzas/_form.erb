@@ -1,7 +1,7 @@
  <%= render :partial => 'layouts/header' %>
 <h1>Make a new pizza</h1>
 
-<%= form_for(@pizza) do |f| %>
+<%= form_for(@object) do |f| %>
     <%= f.label :specialtyname, "Specialty Name:" %>
     <%= f.text_field :specialtyname %>
    <br>
@@ -39,4 +39,3 @@
     <%= f.submit "Add a New Pizza"%>
 
 <% end %>
-<%= render partial: 'layouts/errors', locals: {object: @pizza} %>

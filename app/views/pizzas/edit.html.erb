@@ -1,0 +1,19 @@
+<h2>Edit Pizza</h2>
+
+<form action="/pizza/<%=@pizza.id%>" method="POST" >
+    <input id="hidden" type="hidden" name="_method" value="patch"/>
+
+    <label for="distance">Distance</label>
+    <input type="text" name="distance" value="<%=@log.distance%>" />
+
+    <label for="pace">Pace</label>
+    <input type="text"  name="pace" value="<%=@log.pace%>" /> 
+
+    <label for="avg_heart_rate">Average Heart Rate</label>
+    <input type="text"  name="avg_heart_rate" value="<%=@log.avg_heart_rate%>" />
+
+    <label for="notes">Notes</label>
+    <input type="text"  name="notes" value="<%=@log.notes%>" />
+
+    <input type="submit" value="submit" />
+</form>

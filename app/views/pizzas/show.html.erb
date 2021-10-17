@@ -14,9 +14,7 @@ table, th, td {
   </tr>
   <tr>
     <td><%=@pizza.specialtyname%></td>
-    <td><%=@pizza.toppings%></td>
-    <td> <% if @pizza.image.attatched? %> <%= image_tag url_for(@pizza.image) %>  <% end %> </td>
-    
+    <td><%=@pizza.toppings%></td>  
   </tr>
 </table>
 

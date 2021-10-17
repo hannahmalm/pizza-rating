@@ -15,12 +15,12 @@ class UsersController < ApplicationController
         end
     end 
 
-    def show 
+    def show
         @user = User.find_by_id(params[:id])
     end 
 
-    def index 
-        @user = User.find_by_id(params[:id])
+    def index
+        
     end     
 
     def current_user #this method needs to return user that is found by session user id
