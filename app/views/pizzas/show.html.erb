@@ -1,14 +1,21 @@
- <%= render :partial => 'layouts/header' %>
-<h1>hi</h1>
-<%=@pizza.id%>
-<br>
-<%=@pizza.specialtyname%>
-<br>
-<%=@pizza.toppings%>
-<br>
+<%= render :partial => 'layouts/header' %>
+<style>
+table, th, td {
+  border: 3px solid black;
+}
+</style>
+<table>
+  <tr>
+    <th>Specialty Name</th>
+    <th>Toppings</th>
+    <th>Image</th>
+  </tr>
+  <tr>
+    <td><%=@pizza.specialtyname%></td>
+    <td><%=@pizza.toppings%></td>
+    <td> <% if @pizza.image.attatched? %> <%= image_tag url_for(@pizza.image) %>  <% end %> </td>
+  </tr>
+</table>
 
-<% if @pizza.image.attatched? %>
-    <%= image_tag url_for(@pizza.image) %>
-<% end %>
-
-
+</body>
+</html>
