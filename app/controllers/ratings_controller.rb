@@ -35,6 +35,19 @@ class RatingsController < ApplicationController
         end 
     end 
 
+    def edit 
+        #if logged_in?
+        @rating = Rating.find(params[:id])
+            if @rating&& @rating.user == current_user
+                redirect_to edit_rating_path(@rating)
+            else 
+                redirect_to rating_path(@rating)
+            end 
+            # else 
+            #     redirect to '/login'
+            # end 
+        end 
+
     private 
     #because we are doing a hidden field, you need to specify this 
         def rating_params 
