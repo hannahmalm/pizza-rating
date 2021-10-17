@@ -2,18 +2,21 @@
 <style>
 table, th, td {
   border: 3px solid black;
+  border-spacing: 10px;
 }
 </style>
-<table>
+<table class="foobar" cellpadding="10">
   <tr>
     <th>Specialty Name</th>
     <th>Toppings</th>
     <th>Image</th>
+    <th>Rating</th>
   </tr>
   <tr>
     <td><%=@pizza.specialtyname%></td>
     <td><%=@pizza.toppings%></td>
     <td> <% if @pizza.image.attatched? %> <%= image_tag url_for(@pizza.image) %>  <% end %> </td>
+    
   </tr>
 </table>
 
