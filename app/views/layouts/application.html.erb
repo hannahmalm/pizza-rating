@@ -14,11 +14,10 @@
   </head>
 
   <!--Create the Nav Bar Here-->
-  <%= render 'layouts/header' %>
+    <%= render :partial => 'layouts/header' %>
       <!--When you link for logout, you need to put a method that specifies this is a delete method-->
       <!--To find these links, type rails routes-->
   <body>
-
     <div class="container">
       <%= yield %>
     </div>
