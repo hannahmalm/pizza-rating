@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   
 
+  #resources writes out the 7 restful routes, but only write the routes for methods you are using.
   resources :ratings
   resources :pizzas do 
   resources :ratings, only: [:new, :index]#nested routes
