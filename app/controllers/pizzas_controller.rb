@@ -1,4 +1,5 @@
 class PizzasController < ApplicationController
+    
 
     def index 
         #@pizzas = Pizza.all.order_by_rating
@@ -31,7 +32,7 @@ class PizzasController < ApplicationController
     end 
 
     def update(pizza_params)
-        @pizza = Pizza.find_by_id(params[:id])
+        #@pizza = Pizza.find_by_id(params[:id])
         @pizza.update(specialtyname: params[:specialtyname])
         @pizza.update(toppings: params[:toppings])
         redirect_to pizza_path(@pizza)
@@ -41,5 +42,9 @@ class PizzasController < ApplicationController
 
         def pizza_params
             params.require(:pizza).permit(:specialtyname, :toppings, :restaurant_id, restaurant_attributes: [:name,:city,:state,:website])
+        end 
+
+        def pizza_find_by
+            @pizza = Pizza.find_by_id(params[:id])
         end 
 end
