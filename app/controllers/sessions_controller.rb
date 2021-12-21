@@ -1,9 +1,11 @@
 class SessionsController < ApplicationController
-    def index #this method is an action 
+    def index #GET / sessions#index
+        #this method is an action 
         #allows the index page to load
+        
     end 
 
-    def destroy 
+    def destroy #logout DELETE /logout(.:format) sessions#destroy 
         #the logout link/button should be within the layouts page
         #in rails use delete instead of destroy - destroy is the preferred command when deleting objects, not sessions
         session.delete(:user_id)

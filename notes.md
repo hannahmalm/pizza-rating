@@ -1,13 +1,24 @@
 ***Update Readme***
 Resources - apidoc.com
 - rails new pizza-rating
-Run 'rails routes' to see the routes provided
+- Run 'rails routes' to see the routes provided
 
-URLs Needed
-GET /signup
-POST /users
+Action Steps
+1. Draw out models and relationships and create them and migrate
+2. Create an index page within Sessions
+    - Rails does all the session secret and session information for us so we dont have to specify in application controller
+    - Create sessions controller
+        a. Create the index method 
+            - #GET / sessions#index
+            - def index --> This will implicitly render the session/index view
+        b. Create the login method
+            - 
+    - Create sessions view file
+        - Create index.html.erb *This is the main page that has the option to log in or sign up* 
+            - Has link_to path was to login(login_path), signup(signup_path), and signup with oauth(not a path helper - custom)
+    - Create route associated with 
 
-
+--------------------------------------------------------------------------------------
 1. Create Models & Migrate - rails g resource User username:string password_digest:string 
     - repeat this until all models are created and run rails db migrate
     - you can also type 'rails g model User username:string'
