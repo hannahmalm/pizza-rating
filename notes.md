@@ -5,7 +5,21 @@ Resources - apidoc.com
 
 Action Steps
 1. Draw out models and relationships and create them and migrate
-2. Create an index page within Sessions
+2. Add in any beggining validations
+    - Pizza Model   
+        - belongs to user
+        - belongs to restaurant
+        - has many ratings
+        - has many ratings through users
+        - Validates specialty name
+        - Validates toppings
+    - Rating Model
+        - belongs to user
+        - belongs to pizza
+        - Validates title, rate, comment
+    - Restaurant Model
+    - User Model
+3. Create an index page within Sessions
     - Rails does all the session secret and session information for us so we dont have to specify in application controller
     - Create sessions controller
         a. Create the index method 
@@ -16,7 +30,9 @@ Action Steps
     - Create sessions view file
         - Create index.html.erb *This is the main page that has the option to log in or sign up* 
             - Has link_to path was to login(login_path), signup(signup_path), and signup with oauth(not a path helper - custom)
-    - Create route associated with 
+    - Create route associated with index 
+           - get '/' => 'sessions#index'
+    
 
 --------------------------------------------------------------------------------------
 1. Create Models & Migrate - rails g resource User username:string password_digest:string 
