@@ -49,6 +49,13 @@ Action Steps
     - Create new method in sessions controller
         - def create
         - In Sinatra it would have been POST /login(.:format) sessions#create
+        **A user can log in two ways: through Oauth or Normal Way**
+        *Normal Way*
+            - params need to be specified as user
+            - @user = User.find_by(username: params[:user][:username])
+            - if @user.try(:authenticate, params[:user][:password]) then set the session and redirect to user path, else error and redirect to login
+        *Oauth Way*
+            - params need to be specified as provider
     - No new view needs to be created since this is a POST of the login form
     - Create a route associated with POSTing a new session and actually loggin in 
         - post '/login' => 'sessions#create' #post the login information to create the session
