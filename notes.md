@@ -1,12 +1,22 @@
 ***Update Readme***
 Resources - apidoc.com
+- rails new pizza-rating
 Run 'rails routes' to see the routes provided
+
+URLs Needed
+GET /signup
+POST /users
+
+
 1. Create Models & Migrate - rails g resource User username:string password_digest:string 
-    - repeat this until all models are created and run rake db migrate
+    - repeat this until all models are created and run rails db migrate
+    - you can also type 'rails g model User username:string'
 2. Add in any basic validations, belongs_to, has_many and has_secure_password in User 
     - ensure you enable bcrypt app - bcrypt will hash and salt the password so we cant see this in my database
 3. Add in session controller 
-    - The session is responsible for logging in/out a user
+    - The session is responsible for logging in/out a user - These must be plural
+    - rails g controller Pizzas
+    - rails g controller Restaurants
 4. Add in session(Login/Logout) routes 
     - It is the job of the session to view the index page
          get '/' => 'sessions#index'

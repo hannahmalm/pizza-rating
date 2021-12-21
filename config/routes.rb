@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 #add in session and index routes
+#guides.rubyonrails.orb/routing.html
   get '/' => 'sessions#index'
   get '/login' => 'sessions#new' #this starts a new session when a user logs in 
   post '/login' => 'sessions#create' #post the login information to create the session
