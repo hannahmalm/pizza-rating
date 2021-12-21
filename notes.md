@@ -55,7 +55,28 @@ Action Steps
             - @user = User.find_by(username: params[:user][:username])
             - if @user.try(:authenticate, params[:user][:password]) then set the session and redirect to user path, else error and redirect to login
         *Oauth Way*
-            - params need to be specified as provider
+            - params need to be specified as provider (params[:provider] == 'google_oauth2')
+            - add in omniauth gem
+            - add in omniauth provider gem
+            - add in dotenv gem to see secret information
+            - add a new file under initilaizers - add omniauth.rb - this code will be different based on provider
+            - add in .env file - you will need the id and secret keys 
+                - https://console.cloud.google.com/projectselector2/apis/dashboard?pli=1&supportedpurview=project
+                - create a new project
+                - once in the project, add the credentials
+                - Click credentials then click, create credentials, then click OAuth client id
+                - add the url under authorized urls: http://localhost:3000/auth/google_oauth2/callback
+                - click save and the credentials will appear 
+            - add in link within the index page to give the option of signing in with google 
+            - add in a route in routes file - receive request then send to sessions cotroller 
+                - get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+                - add in an omniauth method in sessions controller 
+                - https://stackoverflow.com/questions/11485271/google-oauth-2-authorization-error-redirect-uri-mismatch
+            - add in omniauth method within the sessions controller
+                - this method links to a method in the User model called User.find_or_create_by_google(auth)
+                    - This method is used to find or create a user based on the email that is brought back in the google authentication 
+                    - there is also a private method created for auth on the sessions controller - this will be used to return the request .env 
+                    
     - No new view needs to be created since this is a POST of the login form
     - Create a route associated with POSTing a new session and actually loggin in 
         - post '/login' => 'sessions#create' #post the login information to create the session
@@ -134,26 +155,7 @@ Action Steps
     - Remember that validations happen when something is saved using .save
     - https://guides.rubyonrails.org/active_record_validations.html#performing-custom-validations
 15. Omniauth
-    - add in omniauth gem
-    - add in omniauth provider gem
-    - add in dotenv gem to see secret information
-    - add a new file under initilaizers - add omniauth.rb - this code will be different based on provider
-    - add in .env file - you will need the id and secret keys 
-        - https://console.cloud.google.com/projectselector2/apis/dashboard?pli=1&supportedpurview=project
-        - create a new project
-        - once in the project, add the credentials
-        - Click credentials then click, create credentials, then click OAuth client id
-        - add the url under authorized urls: http://localhost:3000/auth/google_oauth2/callback
-        - click save and the credentials will appear 
-    - add in link within the index page to give the option of signing in with google 
-    - add in a route in routes file - receive request then send to sessions cotroller 
-        - get '/auth/google_oauth2/callback' => 'sessions#omniauth'
-        - add in an omniauth method in sessions controller 
-        - https://stackoverflow.com/questions/11485271/google-oauth-2-authorization-error-redirect-uri-mismatch
-    - add in omniauth method within the sessions controller
-        - this method links to a method in the User model called User.find_or_create_by_google(auth)
-            - This method is used to find or create a user based on the email that is brought back in the google authentication 
-            - there is also a private method created for auth on the sessions controller - this will be used to return the request .env 
+    
     - Trying Omniauth with GitHub
         - https://github.com/settings/applications/new
         - register a new OAuth Application
