@@ -18,7 +18,10 @@ Action Steps
         - belongs to pizza
         - Validates title, rate, comment
     - Restaurant Model
+        - has many pizzas
     - User Model
+        - has_secure_password
+        - 
 3. Create an index page within Sessions
     - Rails does all the session secret and session information for us so we dont have to specify in application controller
     - Create sessions controller
