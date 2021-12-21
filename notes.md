@@ -35,12 +35,17 @@ Action Steps
            - get '/' => 'sessions#index'
 4. Create a login (new session) page within Sessions
     - Create new method in sessions controller
+        - def new 
+        -  In sinatra it would have been #GET /login - login action
     - Create new session (login) view file
         - Create new.html.erb *This is the login page* 
                 - Use a form_for and pass in user params
+                *** must pass in :user as a symbol instead of @user - doc here: https://www.reddit.com/r/rubyonrails/comments/21bfyf/difference_between_form_foruser_and_form_foruser/**
                 - text field for username and password field for password
     - Create a route associated with new session (login)
-        - get '/' => 'sessions#new'
+        -   get '/login' => 'sessions#new' This starts a new session when a user logs in 
+        - User does not actually get logged in until it posts to the create method
+5. 
     
 
 --------------------------------------------------------------------------------------
