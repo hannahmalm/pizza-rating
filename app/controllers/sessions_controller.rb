@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     
     end 
 
-    def create 
+    def create #POST /login sessions#create
 
         if params[:provider] == 'google_oauth2'
             @user = User.find_or_create_by_google(auth_hash) #this method is in user model

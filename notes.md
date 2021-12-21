@@ -45,7 +45,13 @@ Action Steps
     - Create a route associated with new session (login)
         -   get '/login' => 'sessions#new' This starts a new session when a user logs in 
         - User does not actually get logged in until it posts to the create method
-5. 
+5. Create a login POST page within Sessions
+    - Create new method in sessions controller
+        - def create
+        - In Sinatra it would have been POST /login(.:format) sessions#create
+    - No new view needs to be created since this is a POST of the login form
+    - Create a route associated with POSTing a new session and actually loggin in 
+        - post '/login' => 'sessions#create' #post the login information to create the session
     
 
 --------------------------------------------------------------------------------------
