@@ -21,20 +21,26 @@ Action Steps
         - has many pizzas
     - User Model
         - has_secure_password
-        - 
+        - Validates username
 3. Create an index page within Sessions
     - Rails does all the session secret and session information for us so we dont have to specify in application controller
     - Create sessions controller
         a. Create the index method 
             - #GET / sessions#index
             - def index --> This will implicitly render the session/index view
-        b. Create the login method
-            - 
     - Create sessions view file
         - Create index.html.erb *This is the main page that has the option to log in or sign up* 
             - Has link_to path was to login(login_path), signup(signup_path), and signup with oauth(not a path helper - custom)
     - Create route associated with index 
            - get '/' => 'sessions#index'
+4. Create a login (new session) page within Sessions
+    - Create new method in sessions controller
+    - Create new session (login) view file
+        - Create new.html.erb *This is the login page* 
+                - Use a form_for and pass in user params
+                - text field for username and password field for password
+    - Create a route associated with new session (login)
+        - get '/' => 'sessions#new'
     
 
 --------------------------------------------------------------------------------------
