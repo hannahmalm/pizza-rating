@@ -1,7 +1,7 @@
 class PizzasController < ApplicationController
     
 
-    def index 
+    def index #this is an index action
         #@pizzas = Pizza.all.order_by_rating
         @pizzas = Pizza.all
     end 

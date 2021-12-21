@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    def index 
+    def index #this method is an action 
         #allows the index page to load
     end 
 
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         redirect_to '/'
     end 
 
-    def new 
+    def new #GET /login - login action
     
     end 
 
