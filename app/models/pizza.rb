@@ -12,16 +12,11 @@ class Pizza < ApplicationRecord
   validates :toppings, presence: true
 
   #scopes 
-  #order specialty name alphabetically 
-  #test scope methods in console rails c
-  #define these in the model - call them in the controller or view (
-  def self.alpha 
-    order(:specialtyname)
-  end 
-
   #to find the highest rated pizza - join the two tables (pizza and rating) Pizza.joins(:ratings).group(:id).order('avg(rate) desc'))
   #put this in pizza controlelr
   scope :order_by_rating, -> {Pizza.joins(:ratings).group(:id).order('avg(rate) desc')}
+
+
   def not_a_duplicate #custom validation
     #query the db - if a pizza is already created with the same specialtyname and restaurant, thow an error
     #check this in rails c - Pizza.find_by(specialtryname: 'Mellow Mushroom', restaurant_id: 1)
@@ -34,10 +29,6 @@ class Pizza < ApplicationRecord
     "#{specialtyname} - #{restaurant.name}"
   end 
   
-
-  #validates :specialtyname, uniqueness: {scope: :restaurant, message: 'This pizza is already created.' }
-
-
   #--- add in the restaurant attributes - create a restaurant if the name is not empty - This is the logic that lets you save the dropdown 
   def restaurant_attributes=(attributes)
     self.restaurant = Restaurant.find_or_create_by(attributes) if 
