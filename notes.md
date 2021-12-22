@@ -70,16 +70,26 @@ Action Steps
             - add in link within the index page to give the option of signing in with google 
             - add in a route in routes file - receive request then send to sessions cotroller 
                 - get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+                ** get '/auth/:provider/callback' => 'sessions#create' ** This is the updated dynamic route if you have multiple providers 
                 - add in an omniauth method in sessions controller 
                 - https://stackoverflow.com/questions/11485271/google-oauth-2-authorization-error-redirect-uri-mismatch
             - add in omniauth method within the sessions controller
                 - this method links to a method in the User model called User.find_or_create_by_google(auth)
                     - This method is used to find or create a user based on the email that is brought back in the google authentication 
                     - there is also a private method created for auth on the sessions controller - this will be used to return the request .env 
-                    
+                     def self.find_or_create_by_google(auth)
+                    ** User.find_or_create_by(username: auth[:info][:email]) do |u|
+                        u.password = SecureRandom.hex #set a random password when using omniauth and SecureRandom.hex
+                    end **
+            - @user = User.find_or_create_by_google(auth_hash) then set the session and redirect to user page
     - No new view needs to be created since this is a POST of the login form
     - Create a route associated with POSTing a new session and actually loggin in 
         - post '/login' => 'sessions#create' #post the login information to create the session
+6. Create a new user (Signup)
+    -  **IT IS THE JOB OF THE USER TO SIGN UP, NOT THE SESSION ****
+    - Create users controller
+    - Create users new view
+    - Create users new route
     
 
 --------------------------------------------------------------------------------------
