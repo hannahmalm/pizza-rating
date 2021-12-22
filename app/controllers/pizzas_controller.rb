@@ -1,11 +1,5 @@
 class PizzasController < ApplicationController
     
-
-    def index #this is an index action
-        #@pizzas = Pizza.all.order_by_rating
-        @pizzas = Pizza.all
-    end 
-
     def new 
         @pizza = Pizza.new 
         #tell pizza to build the restaurant because its within a nested form
@@ -15,12 +9,17 @@ class PizzasController < ApplicationController
     def create 
         @pizza = Pizza.new(pizza_params)
         @pizza.user_id = session[:user_id]
-            if @pizza.save 
+            if @pizza.save #validations occur on the save
                 redirect_to pizza_path(@pizza), :notice => "Your Pizza Was Saved"
             else 
                 @pizza.build_restaurant
                 render :new
             end 
+    end 
+
+    def index #this is an index action
+        #@pizzas = Pizza.all.order_by_rating
+        @pizzas = Pizza.all
     end 
 
     def show 

@@ -1,7 +1,7 @@
  <%= render :partial => 'layouts/header' %>
 <h1>Make a new pizza</h1>
 
-<%= form_for(@object) do |f| %>
+<%= form_for(@pizza) do |f| %>
     <%= f.label :specialtyname, "Specialty Name:" %>
     <%= f.text_field :specialtyname %>
    <br>
