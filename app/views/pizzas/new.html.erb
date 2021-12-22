@@ -14,6 +14,8 @@
     <!--Assign this the resturant id-->
     <!--Collection_select(object, method, collection, value_method(id), text_method(what is displayed), options-->
         <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank: 'Select Restaurant' %>
+    <!--collection_select(:pizza, :restaurant_id, Restaurant.all, :id, :name, include_blank:-->
+    <!--Id of restaurant, array of all restaurants, -->
 
     <p>Or create a<b> new Restaurant</b><p>
     <!--We need this to write attributes of another object AKA this is my nested form-->

@@ -128,11 +128,12 @@ Action Steps
         - def new
         -  @pizza = Pizza.new 
         -  @pizza.build_restaurant (Tell Pizza to also build a restaurant because its in a nested form)
-        - .build_restaurant is 
     - Create Pizza new view and form
+        - Create a form with the normal specialty name and toppings
+        - Create a nested form
     - Create Pizza New route
     - Update Pizza Model
-        - accepts_nested_attributes_for :restaurant (need this to accept adding a restaurant in a nested form)
+        - accepts_nested_attributes_for :restaurant (need this to accept adding a restaurant in a nested form and allowed in the Pizza strong params)
 11. Create all Pizza Index page
     - Create Pizza controller and index method
     - Create Pizza index view
