@@ -9,8 +9,8 @@ class Rating < ApplicationRecord
   #validate that if the pizza id has already been added, uniqueness scope is on the user id
   validates :pizza, uniqueness: {scope: :user, message: 'You have already rated this' }
 
-  # def self.order 
-  #   Rating.order(:rating :desc)
-  # end 
+  def self.order 
+    Rating.order(rate: :desc)
+  end 
   
 end
