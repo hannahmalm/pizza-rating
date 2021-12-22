@@ -32,7 +32,7 @@ class RatingsController < ApplicationController
             @ratings = @pizza.ratings.all.order(rate: :desc) #show ratings associated with a pizza
         else 
         #else if the review is not nested - show all pizza ratings
-            @ratings = Rating.all
+            @ratings = Rating.all.order(rate: :desc)
         end 
     end 
 
