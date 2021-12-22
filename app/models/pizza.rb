@@ -44,14 +44,4 @@ class Pizza < ApplicationRecord
       !attributes['name'].empty?
     self.restaurant
   end
-
-  #the belongs_to resttaurant gives us a reader method for restaurant 
-    #def resturant=
-    #end 
-
-    #def build_restuants 
-    #end 
-
-    #def resturant_id 
-    #end 
 end
