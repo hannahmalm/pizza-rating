@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
          <li class="nav-link active">
-           <li> <%= link_to "Add a Pizza", new_pizza_path %> </li>
+          <li> <%= link_to "Add a Pizza", new_pizza_path %> </li>
         </li>
         <li class="nav-link active">
          <li> <%= link_to "All Ratings", ratings_path %> </li>
@@ -34,7 +34,7 @@
             <li> <%= link_to "All Pizzas", pizzas_path %> </li>
         </li>
         <li class="nav-link active">
-         <%= link_to "Home" %>
+          <li><%= link_to "Home", user_path(current_user) %></li>
         </li>
         <li class="nav-link active">
             <li> <%= link_to "Logout", logout_path, method: :delete %> </li>
