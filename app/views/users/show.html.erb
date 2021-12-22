@@ -2,20 +2,20 @@
 
 <div class="Welcome">
 <h1>Welcome, <%=@user.username%></h1>
-
+</div>
 <br>
 <br>
-<h2>Pizza's You Have Tasted</h2>
+<h2>Pizza's You Have Created</h2>
 <% @user.pizzas.each do |p|%>
  <%= link_to p.specialtyname_and_restaurant, pizza_path(p) %><br>
 <% end %>
 
 <br>
 <h2>Pizza's You have Reviewed</h2>
-<%= @user.rated_pizzas.each do |p|%>
- <%=p.specialtyname_and_restaurant %><br>
+<% @user.rated_pizzas.each do |p|%>
+ <%= link_to p.specialtyname_and_restaurant, pizza_path(p)%><br>
 <% end %>
-</div>
+
 
 
 

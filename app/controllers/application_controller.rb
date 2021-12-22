@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 
     helper_method :current_user
+    #if you do not define this up here as a helper method you cant use it in forms
 
     private 
 
