@@ -85,7 +85,8 @@ Action Steps
     - No new view needs to be created since this is a POST of the login form
     - Create a route associated with POSTing a new session and actually loggin in 
         - post '/login' => 'sessions#create' #post the login information to create the session
-6. Create a new user (GET Signup form)
+6. 
+7. Create a new user (GET Signup form)
     -  **IT IS THE JOB OF THE USER TO SIGN UP, NOT THE SESSION ****
     - Create users controller and new method
         - def new
@@ -98,6 +99,13 @@ Action Steps
         - Username text field and password Password field
     - Create users new route
         - get '/signup' => 'users#new'
+8. Create new user (POST Signup)
+    - Create users controller create method
+        - def create
+        -  @user = User.new(user_params) - initialize a new user with private method params
+        - if the user saves, set the session and redirect to user show page
+        - You do not need a post route
+        
     
 
 --------------------------------------------------------------------------------------
