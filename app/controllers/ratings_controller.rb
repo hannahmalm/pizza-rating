@@ -27,6 +27,7 @@ class RatingsController < ApplicationController
         #check to see if the rating is nested - only show the rating for 1 pizza
         #Only difference between nested and unested route - check to see if there is a pizza id 
         #if there is a pizza id it is nested 
+        @rating = Rating.find_by_id(params[:id])
         if @pizza = Pizza.find_by_id(params[:pizza_id]) #if a vaid pizza id is found 
             @ratings = @pizza.ratings.all.order(rate: :desc) #show ratings associated with a pizza
         else 

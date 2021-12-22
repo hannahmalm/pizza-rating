@@ -1,6 +1,12 @@
  <%= render :partial => 'layouts/header' %>
 <h1>Pizza Ratings</h1>
-<ol> <h3><%= @rating.title%> - <%= @rating.rate %></h3> </ol>
+<ol> <h3>
+    <h2>Reviewed By: <%= @rating.user_id %></h2>
+    <h2>Review Title: <%= @rating.title%></h2>
+    <h2>Rate: <%= @rating.rate %></h2> 
+    <h2>Review Comments: <%=@rating.comment%></h2> 
+    <h2>Youtube URL: <%=@rating.url%> </h2> 
+ </h3> </ol>
 
 
 <!--Link to edit/delete path-->
