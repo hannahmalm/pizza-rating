@@ -112,6 +112,15 @@ Action Steps
         -  @user = User.new(user_params) - initialize a new user with private method params
         - if the user saves, set the session and redirect to user show page
         - You do not need a post route
+9. Create Users Show (Users/:id - Users homepage)
+    - Create users controller 
+        - def show
+        - @user = User.find_by_id(params[:id])
+    - Create users show view
+        - users/show.html.erb
+    - Create users route
+        -   resources :users
+10. 
         
     
 
