@@ -1,16 +1,16 @@
 <%= render :partial => 'layouts/header' %>
+<%= render :partial => 'layouts/table' %>
 <style>
 table, th, td {
   border: 3px solid black;
   border-spacing: 10px;
 }
 </style>
-<table class="foobar" cellpadding="10">
+<table class="center" cellpadding="10" >
   <tr>
     <th>Restaurant</th>
     <th>Specialty Name</th>
     <th>Toppings</th>
-    <th>Rating</th>
   </tr>
   <tr>
    <td><%=@pizza.restaurant.name%></td>
