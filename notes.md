@@ -128,13 +128,24 @@ Action Steps
         - def new
         -  @pizza = Pizza.new 
         -  @pizza.build_restaurant (Tell Pizza to also build a restaurant because its in a nested form)
+        - When a user submits the original form, the controller action is to create a new instance of a Pizza
+        - With the nested form, we also need to create a new instance of an restaurant, and associate that restaurant with the Pizza. This is accomplished with the build method.
+        - Ensure that you accept nested attributes in the private method pizza_params
     - Create Pizza new view and form
         - Create a form with the normal specialty name and toppings
         - Create a nested form with restaurant options
         - Allow for a dropdown using collection select: <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank: 'Select Restaurant' %>
     - Create Pizza New route
+        - 
     - Update Pizza Model
         - accepts_nested_attributes_for :restaurant (need this to accept adding a restaurant in a nested form and allowed in the Pizza strong params)
+        - Need to also update the attributes section by doing the following: This will allow you to save the dropdown value if not creating a new restaurant
+            def restaurant_attributes=(attributes)
+                self.restaurant = Restaurant.find_or_create_by(attributes) if !attributes['name'].empty?
+                self.restaurant
+            end
+            - This says that Pizza associated with a restaurant is created or found by attributes by looking at the name field 
+        - https://levelup.gitconnected.com/rails-nested-forms-in-three-steps-5580f0ad0e
 11. Create all Pizza Index page
     - Create Pizza controller and index method
     - Create Pizza index view
