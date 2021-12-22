@@ -40,7 +40,9 @@ class PizzasController < ApplicationController
 
     private 
 
-        def pizza_params
+        def pizza_params #strong params - provides an interface for protecting attributes from end-user assignment
+            #parameters can be marked as required and flow through a predefined raise/rescue flow to end up as a 400 Bad Request with no effort
+            #In order to use accepts_nested_attributes_for with Strong Parameters, you will need to specify which nested attributes should be permitted
             params.require(:pizza).permit(:specialtyname, :toppings, :restaurant_id, restaurant_attributes: [:name,:city,:state,:website])
         end 
 

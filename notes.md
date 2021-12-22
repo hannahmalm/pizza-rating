@@ -123,7 +123,20 @@ Action Steps
         - The Pizza path takes you to pizza/:id and shows a table of the Pizza details
     - Create users route
         -   resources :users
-10. 
+10. Create a new Pizza ()
+    - Create Pizza controller and new method
+        - def new
+        -  @pizza = Pizza.new 
+        -  @pizza.build_restaurant (Tell Pizza to also build a restaurant because its in a nested form)
+        - .build_restaurant is 
+    - Create Pizza new view and form
+    - Create Pizza New route
+    - Update Pizza Model
+        - accepts_nested_attributes_for :restaurant (need this to accept adding a restaurant in a nested form)
+11. Create all Pizza Index page
+    - Create Pizza controller and index method
+    - Create Pizza index view
+    - Create Pizza index route
         
     
 
