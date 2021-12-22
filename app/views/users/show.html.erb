@@ -3,8 +3,11 @@
 <div class="Welcome">
 <h1>Welcome, <%=@user.username%></h1>
 
+<br>
+<br>
+<h2>Pizza's You Have Tasted</h2>
 <% @user.pizzas.each do |p|%>
-<li> <%= link_to p.specialtyname_and_restaurant, pizza_path(p) %>  || <%= link_to "Add A Rating", new_rating_path %></li>
+ <%= link_to p.specialtyname_and_restaurant, pizza_path(p) %><br>
 <% end %>
 </div>
 
