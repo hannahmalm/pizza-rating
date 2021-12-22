@@ -85,7 +85,14 @@ Action Steps
     - No new view needs to be created since this is a POST of the login form
     - Create a route associated with POSTing a new session and actually loggin in 
         - post '/login' => 'sessions#create' #post the login information to create the session
-6. 
+6. Create logout
+    - Create sessions destroy (logout) method
+        -  session.delete(:user_id) then redirect to the index page
+        - In rails, use delete instead of .destroy when using sessions
+    - Create logout button in view (within the partial "_header.html.erb")
+        - <%= link_to "Logout", logout_path, method: :delete %>
+    - Create logout route
+        - delete '/logout' => 'sessions#destroy'
 7. Create a new user (GET Signup form)
     -  **IT IS THE JOB OF THE USER TO SIGN UP, NOT THE SESSION ****
     - Create users controller and new method
