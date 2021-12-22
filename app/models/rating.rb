@@ -3,7 +3,7 @@ class Rating < ApplicationRecord
   belongs_to :pizza
 
   validates :title, presence: true
-  validates :rate, numericality: { greater_than: 0}
+  validates :rate, numericality: { greater_than: 0, less_than: 10}
   validates :comment, presence: true
 
   #validate that if the pizza id has already been added, uniqueness scope is on the user id

@@ -130,7 +130,8 @@ Action Steps
         -  @pizza.build_restaurant (Tell Pizza to also build a restaurant because its in a nested form)
     - Create Pizza new view and form
         - Create a form with the normal specialty name and toppings
-        - Create a nested form
+        - Create a nested form with restaurant options
+        - Allow for a dropdown using collection select: <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank: 'Select Restaurant' %>
     - Create Pizza New route
     - Update Pizza Model
         - accepts_nested_attributes_for :restaurant (need this to accept adding a restaurant in a nested form and allowed in the Pizza strong params)
@@ -253,3 +254,12 @@ Action Steps
         - in amazon, it will only show you credentials once 
 
      <!-- <a href="/users/<%=current_user.id%>">Back to account</a>-->
+
+
+     <!--Example of using a form tag-->
+<!--Form tags are used when you dont have a model or want to make custom URLS-->
+<!--<%= form_tag("/useres") do -->
+<!-- label_tag "Username:" %> -->
+<!-- text_field_tag "username" %> -->
+<!-- <%= submit_tag "Sign Up" %> -->
+<!-- <%end%>  -->
