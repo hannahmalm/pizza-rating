@@ -118,6 +118,9 @@ Action Steps
         - @user = User.find_by_id(params[:id])
     - Create users show view
         - users/show.html.erb
+        - This page shows all the pizzas a user creates
+        - it has a link to add new ratings and list the specailty name and the restaurant of the pizza (created in pizza model)
+        - The Pizza path takes you to pizza/:id and shows a table of the Pizza details
     - Create users route
         -   resources :users
 10. 
