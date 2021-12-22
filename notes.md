@@ -238,4 +238,4 @@ Action Steps
         - add in access key and secret access key in the credentials.yml
         - in amazon, it will only show you credentials once 
 
-    
+     <!-- <a href="/users/<%=current_user.id%>">Back to account</a>-->
