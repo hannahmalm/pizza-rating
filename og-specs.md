@@ -31,7 +31,7 @@ Specs:
 - [x] Include logout
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
     - Google
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
     -/pizzas/1/ratings/1
     -/pizzas/1/ratings
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)

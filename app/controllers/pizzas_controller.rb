@@ -21,6 +21,7 @@ class PizzasController < ApplicationController
         #@pizzas = Pizza.all.order_by_rating
         @pizzas = Pizza.all
         @pizza = Pizza.find_by_id(params[:id])
+        #show most popular pizza here
     end 
 
     def show 
@@ -36,6 +37,10 @@ class PizzasController < ApplicationController
         @pizza.update(specialtyname: params[:specialtyname])
         @pizza.update(toppings: params[:toppings])
         redirect_to pizza_path(@pizza)
+    end 
+
+    def most_popular_pizza
+
     end 
 
     private 

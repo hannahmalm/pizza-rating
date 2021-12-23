@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
 
     def index 
-        @restaurants = Restaurant.alpha
+        @restaurants = Restaurant.state_order
     end 
 
 
