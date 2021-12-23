@@ -10,7 +10,7 @@ class Pizza < ApplicationRecord
   #scopes 
   #to find the highest rated pizza - join the two tables (pizza and rating) Pizza.joins(:ratings).group(:id).order('avg(rate) desc'))
   #put this in pizza controlelr
-  scope :order_by_rating, -> {Pizza.joins(:ratings).group(:id).order('avg(rate) desc')}
+  # scope :highest_rating, -> {Pizza.joins(:ratings).group(:id).order('avg(rate) desc')}
 
 
   def not_a_duplicate #custom validation

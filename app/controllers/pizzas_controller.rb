@@ -20,6 +20,7 @@ class PizzasController < ApplicationController
     def index #this is an index action
         #@pizzas = Pizza.all.order_by_rating
         @pizzas = Pizza.all
+        @pizza = Pizza.find_by_id(params[:id])
     end 
 
     def show 
