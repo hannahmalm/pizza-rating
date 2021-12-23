@@ -22,6 +22,7 @@ class PizzasController < ApplicationController
         @pizzas = Pizza.all
         @pizza = Pizza.find_by_id(params[:id])
         #show most popular pizza here
+        #most_popular_pizza
     end 
 
     def show 
@@ -40,7 +41,7 @@ class PizzasController < ApplicationController
     end 
 
     def most_popular_pizza
-
+        #this will come from a Scope
     end 
 
     private 
