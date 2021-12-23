@@ -29,7 +29,7 @@
             <%= r.text_field :city %> 
             <br>
             <%= r.label :state, "State:"%>
-            <%= select_tag :state, options_for_select(us_states) %>
+            <%= r.select :state, options_for_select(us_states) %>
             <br>
             <%= r.label :website, "Website"%>
             <%= r.text_field :website %>
