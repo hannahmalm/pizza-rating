@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #get '/auth/google_oauth2/callback' => 'sessions#omniauth'
   get '/auth/:provider/callback' => 'sessions#create'
 
-  get 'pizzas/most_popular_pizzas' => 'pizzas#most_popular_pizza'
+  get '/pizzas/most_popular_pizzas' => 'pizzas#most_popular_pizza'
  
 
   
