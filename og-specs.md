@@ -25,7 +25,7 @@ Specs:
     - Rating rate is required - only valid 1-10 decimals
     - Rating title is required
     - Rating comment is required
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include signup
 - [x] Include login
 - [x] Include logout
