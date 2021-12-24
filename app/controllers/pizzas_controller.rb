@@ -42,6 +42,8 @@ class PizzasController < ApplicationController
 
     def most_popular_pizza
         @most_popular_pizza =  Pizza.highest_avg_rating_order.first
+        @second_popular_pizza = Pizza.highest_avg_rating_order.second
+        @third_popular_pizza = Pizza.highest_avg_rating_order.third
     end 
 
 
