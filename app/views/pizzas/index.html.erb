@@ -1,7 +1,7 @@
  <%= render :partial => 'layouts/header' %>
 <h1>Pizzas</h1>
 
-<h2> <b> Most Popular Pizza in the USA: <%= @most_popular_pizza.specialtyname_and_restaurant%> </b></h2>
+<h2> <b> <%= link_to "Most Popular Pizza in the USA:", pizzas_most_popular_pizzas_path %> <%= @most_popular_pizza.specialtyname_and_restaurant%> </b></h2>
 <br>
 <h2>See below the other tasty Pizzas!</h2>
 <ol>
