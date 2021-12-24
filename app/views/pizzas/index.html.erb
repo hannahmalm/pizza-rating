@@ -1,8 +1,9 @@
  <%= render :partial => 'layouts/header' %>
 <h1>Pizzas</h1>
 
-<h2>Most Popular Pizza in the USA: </h2>
-
+<h2> <b> Most Popular Pizza in the USA: <%= @most_popular_pizza.specialtyname_and_restaurant%> </b></h2>
+<br>
+<h2>See below the other tasty Pizzas!</h2>
 <ol>
     <% @pizzas.each do |p| %>
         <li><b>Restaurant:</b> <%= p.restaurant.name %> | <b>Specialty Name:</b> <%= p.specialtyname %> 

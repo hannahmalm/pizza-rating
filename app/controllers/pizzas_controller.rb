@@ -22,7 +22,7 @@ class PizzasController < ApplicationController
         @pizzas = Pizza.all
         @pizza = Pizza.find_by_id(params[:id])
         #show most popular pizza here
-        @most_popular_pizza
+        @most_popular_pizza = Pizza.highest_avg_rating_order.first
     end 
 
     def show 
@@ -40,7 +40,10 @@ class PizzasController < ApplicationController
         redirect_to pizza_path(@pizza)
     end 
 
-    
+    def most_popular_pizza
+        @most_popular_pizza =  Pizza.highest_avg_rating_order.first
+    end 
+
 
     private 
 
@@ -54,7 +57,5 @@ class PizzasController < ApplicationController
             @pizza = Pizza.find_by_id(params[:id])
         end 
 
-        def most_popular_pizza
-            @most_popular_pizza =  Pizza.highest_avg_rating_order.first
-         end 
+       
 end

@@ -136,7 +136,7 @@ Action Steps
         - Create a nested form with restaurant options
         - Allow for a dropdown using collection select: <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank: 'Select Restaurant' %>
     - Create Pizza New route
-        - 
+        - resources pizza 
     - Update Pizza Model
         - accepts_nested_attributes_for :restaurant (need this to accept adding a restaurant in a nested form and allowed in the Pizza strong params)
         - Need to also update the attributes section by doing the following: This will allow you to save the dropdown value if not creating a new restaurant
