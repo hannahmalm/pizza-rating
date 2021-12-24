@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :current_user, :not_logged_in_helper
+    helper_method :current_user, :not_logged_in_helper, :logged_in?
     #if you do not define this up here as a helper method you cant use it in forms
 
     private 
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
     def not_logged_in_helper #this is the same as if logged_in? else redirect to login
         if !current_user
-            redirect to "/login"
+            redirect to login_path
         end 
     end 
 
