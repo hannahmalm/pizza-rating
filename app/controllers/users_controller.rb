@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    before_action :not_logged_in_helper, on: [:create, :show, :index]
 
     def new 
         @user = User.new
@@ -23,11 +23,11 @@ class UsersController < ApplicationController
         
     end     
 
-    def current_user #this method needs to return user that is found by session user id
-        #||= will only call db once if you are using current user more than once in a method 
-        #find by id so that if the id is null it wont error out
-        @current_user ||= User.find_by_id(session[:user_id])
-    end 
+    # def current_user #this method needs to return user that is found by session user id
+    #     #||= will only call db once if you are using current user more than once in a method 
+    #     #find by id so that if the id is null it wont error out
+    #     @current_user ||= User.find_by_id(session[:user_id])
+    # end 
 
     private 
 

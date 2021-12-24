@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
     def not_logged_in_helper #this is the same as if logged_in? else redirect to login
         if !current_user
-            redirect to login_path
+            redirect_to login_path
         end 
     end 
 
