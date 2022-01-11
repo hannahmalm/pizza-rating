@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :not_logged_in_helper, on: [:create, :show, :index]
+    before_action :not_logged_in_helper, on: [:create, :show, :index] #before each method, verify that a user is logged in
 
     def new 
         @user = User.new

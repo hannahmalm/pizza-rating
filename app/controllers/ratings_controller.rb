@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-    before_action :not_logged_in_helper, on: [:create, :show, :index]
+    before_action :not_logged_in_helper, on: [:create, :show, :index] #before each method, verify that a user is logged in
     def new 
         #route will look like /pizzas/1/ratings/new
         if @pizza = Pizza.find_by_id(params[:pizza_id]) #if the pizza is created
