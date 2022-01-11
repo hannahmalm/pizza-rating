@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get '/' => 'sessions#index'
   get '/login' => 'sessions#new' #this starts a new session when a user logs in 
   post '/login' => 'sessions#create' #post the login information to create the session
+  delete '/logout' => 'sessions#destroy' #destroy the session when a user logs out
+
   get '/signup' => 'users#new'
   #you do not need a post sign up here because the user will be created 
-  delete '/logout' => 'sessions#destroy' #destroy the session when a user logs out
 
   #get '/auth/google_oauth2/callback' => 'sessions#omniauth'
   get '/auth/:provider/callback' => 'sessions#create'
