@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     end 
 
     def new #GET /login - login action
-    
+        #implicitly renders the sessions/new.html.erb file 
     end 
 
     def create #POST /login sessions#create

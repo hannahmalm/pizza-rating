@@ -29,7 +29,8 @@
 /public/assets
 .byebug_history
 
-# Ignore master key for decrypting credentials and more. Add .env so secrets do not get pushed to git hub
+# Ignore master key for decrypting credentials and more. 
+#Add .env so secrets do not get pushed to git hub
 /config/master.key
 .env
 

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   #you do not need a post sign up here because the user will be created 
 
-  #get '/auth/google_oauth2/callback' => 'sessions#omniauth'
-  get '/auth/:provider/callback' => 'sessions#create'
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+  #get '/auth/:provider/callback' => 'sessions#create' #only use this if there are multiple providers
 
   get '/pizzas/most_popular_pizzas' => 'pizzas#most_popular_pizza'
  
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #resources writes out the 7 restful routes, but only write the routes for methods you are using.
   resources :ratings
   resources :pizzas do 
-  resources :ratings, only: [:new, :index, :show]#nested routes
+  resources :ratings, only: [:new, :index, :show] #nested routes
   end 
   resources :restaurants
   resources :users

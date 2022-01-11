@@ -2,6 +2,7 @@
 Resources - apidoc.com
 - rails new pizza-rating
 - Run 'rails routes' to see the routes provided
+- Class.find(id).destroy
 
 Action Steps
 1. Draw out models and relationships and create them and migrate
