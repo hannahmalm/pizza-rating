@@ -14,7 +14,7 @@ table, th, td {
     <th>Restaurant</th>
     <th>City</th>
     <th>State</th>
-    <th>Youtube URL</th>
+    <th>Youtube Review</th>
     <th>View Details</th>
   </tr>
   <tr>
@@ -24,7 +24,9 @@ table, th, td {
    <td> <%= rating.pizza.restaurant.name%>  
    <td> <%= rating.pizza.restaurant.city%>  
    <td> <%= rating.pizza.restaurant.state%>  
-   <td> <%= rating.url%> 
+   <td> <iframe width="300" height="200"
+        src=<%=rating.url%>>
+    </iframe>
    <td> <%= link_to "Show Review", rating_path(rating)%> 
  </tr>
 <%end %>

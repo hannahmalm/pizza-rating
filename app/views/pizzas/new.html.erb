@@ -19,9 +19,9 @@
 
     <p>Or create a<b> new Restaurant</b><p>
     <!--We need this to write attributes of another object AKA this is my nested form-->
-    <!--When doing a nested form, use the fields_for-->
+   
     <div>
-        <%=f.fields_for :restaurant do |r|%>
+        <%=f.fields_for :restaurant do |r|%>  <!--When doing a nested form, use the fields_for-->
             <%= r.label :name, "Name:"%>
             <%= r.text_field :name %>
             <br>
@@ -29,7 +29,7 @@
             <%= r.text_field :city %> 
             <br>
             <%= r.label :state, "State:"%>
-            <%= r.select :state, options_for_select(us_states) %>
+            <%= r.select :state, options_for_select(us_states) %> <!--Use a select tag with options built in the Resturant helper-->
             <br>
             <%= r.label :website, "Website"%>
             <%= r.text_field :website %>
