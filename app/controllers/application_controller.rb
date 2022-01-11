@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     helper_method :current_user, :not_logged_in_helper, :logged_in?
-    #if you do not define this up here as a helper method you cant use it in forms
+    #Define these outside the private method so that you can use it in forms
 
     private 
 

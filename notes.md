@@ -55,7 +55,8 @@ Action Steps
             - params need to be specified as user
             - @user = User.find_by(username: params[:user][:username])
             - if @user.try(:authenticate, params[:user][:password]) then set the session and redirect to user path, else error and redirect to login
-        *Oauth Way*
+        *Oauth Way* - https://medium.com/@ali_schlereth/omniauth-is-not-a-scary-monster-a23b21c4f739
+       *  https://github.com/omniauth/omniauth
             - params need to be specified as provider (params[:provider] == 'google_oauth2')
             - add in omniauth gem
             - add in omniauth provider gem

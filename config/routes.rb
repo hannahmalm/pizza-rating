@@ -7,17 +7,13 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create' #post the login information to create the session
   delete '/logout' => 'sessions#destroy' #destroy the session when a user logs out
 
-  get '/signup' => 'users#new'
-  #you do not need a post sign up here because the user will be created 
+  get '/signup' => 'users#new'  #you do not need a post sign up here because the user will be created 
 
   get '/auth/google_oauth2/callback' => 'sessions#omniauth'
   #get '/auth/:provider/callback' => 'sessions#create' #only use this if there are multiple providers
 
   get '/pizzas/most_popular_pizzas' => 'pizzas#most_popular_pizza'
  
-
-  
-
   #resources writes out the 7 restful routes, but only write the routes for methods you are using.
   resources :ratings
   resources :pizzas do 

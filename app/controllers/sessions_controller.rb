@@ -1,14 +1,11 @@
 class SessionsController < ApplicationController
-    def index #GET / sessions#index
-        #this method is an action 
-        #allows the index page to load
-        
+    def index #GET / sessions#index - Action Method
+        #Implicitly renders sessions/index.html.erb
     end 
 
     def destroy #logout DELETE /logout(.:format) sessions#destroy 
         #the logout link/button should be within the layouts page
-        #in rails use delete instead of destroy - destroy is the preferred command when deleting objects, not sessions
-        session.delete(:user_id)
+        session.delete(:user_id)  #in rails use delete instead of destroy - destroy is the preferred command when deleting objects, not sessions
         redirect_to '/'
     end 
 
@@ -17,15 +14,14 @@ class SessionsController < ApplicationController
     end 
 
     def create #POST /login sessions#create
-
-        if params[:provider] == 'google_oauth2'
-            @user = User.find_or_create_by_google(auth_hash) #this method is in user model
-            session[:user_id] = @user.id 
-            redirect_to user_path(@user)
+        if params[:provider] == 'google_oauth2' #defined in initilizers/omniauth.rb
+            @user = User.find_or_create_by_google(auth_hash) #method within the user model, params in private method
+            session[:user_id] = @user.id #set the session id
+            redirect_to user_path(@user) #redirect to the user homepage
         else 
-            @user = User.find_by(username: params[:user][:username])
+            @user = User.find_by(username: params[:user][:username]) #use this via regular sign  in
             #try is an active support method, calling try on the user, if the user is not nil, then they are authenticating the params password against what the user put in
-            #before calling the method, it trys to see if the user is nil. If user is not nil, it will authenticate
+            #before calling the method, it trys to see if the user is nil. If user is not nil, it will authenticate.
             if @user.try(:authenticate, params[:user][:password])
             # if @user && @user.authenticate(password: params[:user][:password])
                 session[:user_id] = @user.id #set the session 
@@ -38,21 +34,18 @@ class SessionsController < ApplicationController
     end 
 
     def omniauth 
-        #find or create the user via the email, then set the password 
-        @user = User.find_or_create_by_google(auth_hash)
-        #After password is set, they log in, session is set, they are redirected to user path 
-        session[:user_id] = @user.id
-        redirect_to user_path(@user) #same as /user/:id 
-
-
+        @user = User.find_or_create_by_google(auth_hash)  #find or create the user via the email, then set the password 
+        session[:user_id] = @user.id #After password is set, they log in, session is set, they are redirected to user path 
+        redirect_to user_path(@user) #same as /user/:id - redirect to user homepage
         #run Rails c - request.env['omniauth.auth'][':info'][':email']
-        #User.where(username: auth[:info][:email]).first_or_initialize #looks in db for email, if email exists(first result), authorize it, if not initialize it
- 
+        #User.where(username: auth[:info][:email]).first_or_initialize #looks in db for email, if email exists(first result), authorize it, if not initialize it    
     end 
 
     private 
 
-        def auth_hash #will return the request .env
+    #The omniauth.auth key in the environment hash provides an Authentication Hash which will contain information about the user including a unique id, 
+    #the strategy they just used for authentication, and personal details such as name
+        def auth_hash 
             request.env['omniauth.auth']
         end 
 

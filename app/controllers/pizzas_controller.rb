@@ -1,5 +1,5 @@
 class PizzasController < ApplicationController
-    
+    before_action :not_logged_in_helper, on: [:create, :show, :index]
     def new 
         @pizza = Pizza.new 
         #tell pizza to build the restaurant because its within a nested form
@@ -33,12 +33,12 @@ class PizzasController < ApplicationController
        
     end 
 
-    def update(pizza_params)
-        #@pizza = Pizza.find_by_id(params[:id])
-        @pizza.update(specialtyname: params[:specialtyname])
-        @pizza.update(toppings: params[:toppings])
-        redirect_to pizza_path(@pizza)
-    end 
+    # def update(pizza_params)
+    #     #@pizza = Pizza.find_by_id(params[:id])
+    #     @pizza.update(specialtyname: params[:specialtyname])
+    #     @pizza.update(toppings: params[:toppings])
+    #     redirect_to pizza_path(@pizza)
+    # end 
 
     def most_popular_pizza
         @most_popular_pizza =  Pizza.highest_avg_rating_order.first
