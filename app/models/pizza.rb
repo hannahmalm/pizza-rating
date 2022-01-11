@@ -26,9 +26,15 @@ class Pizza < ApplicationRecord
   end 
   
   #--- add in the restaurant attributes - create a restaurant if the name is not empty - This is the logic that lets you save the dropdown 
-  def restaurant_attributes=(attributes)
-    self.restaurant = Restaurant.find_or_create_by(attributes) if 
-      !attributes['name'].empty?
-    self.restaurant
-  end
+  #https://medium.com/@ryanwerner_57863/how-to-build-a-nested-form-in-rails-using-fields-for-c185210f6869
+  # def restaurant_attributes=(attributes)
+  #   self.restaurant = Restaurant.find_or_create_by(attributes) if 
+  #     !attributes['name'].empty?
+  #   self.restaurant
+  # end
+
+  def restaurant_attributes=(restaurant_attributes)
+    restaurant_attributes.each do |i, restaurant_attributes|
+      self.restaurant.build(restaurant_attributes)
+    end 
 end
