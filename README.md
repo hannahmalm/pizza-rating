@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is used to track and organize the most famous pizza restuarants in the USA. To get started, follow the instructions below
 
-Things you may want to cover:
+Steps to view the Pizza rating
+1. Run bundle install
+2. run 'rails s' in the terminal
+3. navigate to the localhost in a browser to view the application
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
